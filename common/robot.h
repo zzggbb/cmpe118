@@ -1,6 +1,9 @@
 #ifndef ROBOT_H
 #define ROBOT_H
 
+#define FALSE 0
+#define TRUE 1
+
 #define MOTOR_PWM_FREQ 1000
 #define MOTOR_DIR_FWD 1
 #define MOTOR_DIR_REV 0
@@ -27,10 +30,10 @@
 #define BEACON_LAT LATDbits.LATD5   // silk pin 34
 
 #define L_BUMP_TRI TRISDbits.TRISD7 // silk pin 37
-#define L_BUMP_PRT PORTDbits.PORTD7 // silk pin 37
+#define L_BUMP_PRT PORTDbits.RD7 // silk pin 37
 
 #define R_BUMP_TRI TRISFbits.TRISF6 // silk pin 38
-#define R_BUMP_PRT PORTFbits.PORTF6 // silk pin 38
+#define R_BUMP_PRT PORTFbits.RF6 // silk pin 38
 
 #define L_TAPE AD_PORTV3
 #define R_TAPE AD_PORTV5
@@ -40,6 +43,8 @@ void robot_fwd(void);
 void robot_rev(void);
 void robot_cw(void);
 void robot_ccw(void);
+void robot_curve_l(void);
+void robot_curve_r(void);
 void robot_stop(void);
 void robot_gun_pitch(float angle);
 void robot_gun_pitch_up(float angle);

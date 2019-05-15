@@ -28,7 +28,6 @@
       <itemPath>../common/robot.h</itemPath>
       <itemPath>../common/serial.h</itemPath>
       <itemPath>../common/timers.h</itemPath>
-      <itemPath>../common/pins.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -56,7 +55,6 @@
       <itemPath>../common/robot.c</itemPath>
       <itemPath>../common/serial.c</itemPath>
       <itemPath>../common/timers.c</itemPath>
-      <itemPath>../common/pins.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

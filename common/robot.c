@@ -70,6 +70,20 @@ void robot_stop(void) {
   R_MOTOR_DIR_LAT = 0;
 }
 
+void robot_curve_l(void) {
+  PWM_SetDutyCycle(L_MOTOR_PWM, 300);
+  PWM_SetDutyCycle(R_MOTOR_PWM, 500);
+  L_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
+  R_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
+}
+
+void robot_curve_r(void) {
+  PWM_SetDutyCycle(L_MOTOR_PWM, 500);
+  PWM_SetDutyCycle(R_MOTOR_PWM, 300);
+  L_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
+  R_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
+}
+
 // move gun pitch to an absolute angle
 void robot_gun_pitch(float angle) {
   if (angle < GUN_PITCH_MIN) angle = GUN_PITCH_MIN;
