@@ -1,4 +1,6 @@
-#include "xc.h"
+#include <xc.h>
+#include <stdio.h>
+
 #include "BOARD.h"
 #include "ES_Configure.h"
 #include "ES_Events.h"
@@ -6,17 +8,14 @@
 
 #include "TapeEventChecker.h"
 #include "pins.h"
+#include "robot.h"
 
-#define EVENTCHECKER_TEST
 #define HISTORY_SIZE 3
 #define NUM_SENSORS 2
 
-#ifdef EVENTCHECKER_TEST
-#include <stdio.h>
 #define SaveEvent(x) do {eventName=__func__;storedEvent=x;} while (0)
 static const char *eventName;
 static ES_Event storedEvent;
-#endif
 
 static uint8_t history[NUM_SENSORS][HISTORY_SIZE];
 static uint8_t state[NUM_SENSORS];
@@ -26,8 +25,8 @@ static uint8_t events[NUM_SENSORS] = {
   TAPE_R,
 };
 static uint8_t pins[NUM_SENSORS] = {
-  32,
-  33,
+  TAPE_L_PIN,
+  TAPE_R_PIN,
 };
 
 static uint8_t initialized = FALSE;
@@ -58,8 +57,7 @@ uint8_t TapeEventChecker(void) {
       for (i=0; i<HISTORY_SIZE; i++)
         history[sensor][i] = 0xFF;
 
-      state[sensor] = read_pin(pins[sensor]);
-      last_state[sensor] = read_pin(pins[sensor]);
+      state[sensor] = last_state[sensor] = read_pin(pins[sensor]);
     }
     initialized = TRUE;
   }
@@ -80,29 +78,23 @@ uint8_t TapeEventChecker(void) {
     if (state[sensor] != last_state[sensor]) {
       was_event = TRUE;
       ES_Event event = {.EventType = events[sensor], .EventParam = state[sensor]};
-#ifdef EVENTCHECKER_TEST
+
       SaveEvent(event);
-#else
-      PostGenericService(event);
-#endif
+
       last_state[sensor] = state[sensor];
     }
   }
   return was_event;
 }
 
-#ifdef EVENTCHECKER_TEST
-#include <stdio.h>
-static uint8_t(*EventList[])(void) = {EVENT_CHECK_LIST};
+static uint8_t(*EventList[])(void) = {TapeEventChecker};
 void PrintEvent(void){
   printf("func: %s event: %s param: 0x%X\r\n", eventName,
       EventNames[storedEvent.EventType], storedEvent.EventParam);
 }
 void main(void) {
   BOARD_Init();
-  int sensor;
-  for (sensor = 0; sensor < NUM_SENSORS; sensor++)
-    set_tris(pins[sensor], 1);
+  robot_init();
 
   printf(__FILE__ " " __DATE__ " " __TIME__ "\r\n");
 
@@ -118,4 +110,3 @@ void main(void) {
     }
   }
 }
-#endif

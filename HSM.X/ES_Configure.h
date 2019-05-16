@@ -23,6 +23,8 @@ typedef enum {
     //
     TAPE_L,
     TAPE_R,
+    BUMP_L,
+    BUMP_R,
 
     NUMBEROFEVENTS,
 } ES_EventTyp_t;
@@ -44,15 +46,17 @@ static const char *EventNames[] = {
   //
   "TAPE_L",
   "TAPE_R",
+  "BUMP_L",
+  "BUMP_R",
 
 	"NUMBEROFEVENTS",
 };
 
 // This are the name of the Event checking function header file.
-#define EVENT_CHECK_HEADER "TapeEventChecker.h"
+#define EVENT_CHECK_HEADER "AllEventCheckers.h"
 
 // Comma separated list of event checking functions
-#define EVENT_CHECK_LIST TapeEventChecker
+#define EVENT_CHECK_LIST TapeEventChecker,BumpEventChecker
 
 // These are the definitions for the post functions to be executed when the
 // corresponding timer expires. All 16 must be defined. If you are not using

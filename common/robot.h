@@ -1,6 +1,9 @@
 #ifndef ROBOT_H
 #define ROBOT_H
 
+#define TRIS_INPUT 1
+#define TRIS_OUTPUT 0
+
 #define FALSE 0
 #define TRUE 1
 
@@ -23,20 +26,16 @@
 #define R_MOTOR_DIR_LAT LATFbits.LATF1    // silk pin 4
 #define R_MOTOR_PWM PWM_PORTY12           // silk pin 5
 
-#define GUN_MOTOR_PWM_PORTY10 // silk pin 6
+#define GUN_MOTOR PWM_PORTY10 // silk pin 6
 #define GUN_PITCH_RC RC_PORTX03   // silk pin 40
 
-#define BEACON_TRI TRISDbits.TRISD5 // silk pin 34
-#define BEACON_LAT LATDbits.LATD5   // silk pin 34
+#define BEACON_PIN 34
 
-#define L_BUMP_TRI TRISDbits.TRISD7 // silk pin 37
-#define L_BUMP_PRT PORTDbits.RD7 // silk pin 37
+#define TAPE_L_PIN 32
+#define TAPE_R_PIN 33
 
-#define R_BUMP_TRI TRISFbits.TRISF6 // silk pin 38
-#define R_BUMP_PRT PORTFbits.RF6 // silk pin 38
-
-#define L_TAPE AD_PORTV3
-#define R_TAPE AD_PORTV5
+#define BUMP_L_PIN 37
+#define BUMP_R_PIN 38
 
 void robot_init(void);
 void robot_fwd(void);

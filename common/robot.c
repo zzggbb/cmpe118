@@ -1,9 +1,12 @@
 #include "xc.h"
+
 #include "BOARD.h"
-#include "robot.h"
 #include "pwm.h"
 #include "AD.h"
 #include "RC_Servo.h"
+
+#include "robot.h"
+#include "pins.h"
 
 static float current_gun_pitch;
 
@@ -25,9 +28,13 @@ void robot_init(void) {
   RC_AddPins(GUN_PITCH_RC);
   robot_gun_pitch(0);
 
-  // initialize AD system for tape sensor
-  AD_Init();
-  AD_AddPins(L_TAPE | R_TAPE);
+  // initialize tape pins
+  set_tris(TAPE_L_PIN, TRIS_INPUT);
+  set_tris(TAPE_R_PIN, TRIS_INPUT);
+
+  // initialize bump pins
+  set_tris(BUMP_L_PIN, TRIS_INPUT);
+  set_tris(BUMP_R_PIN, TRIS_INPUT);
 }
 
 // drive robot forward
