@@ -1,11 +1,15 @@
-#include "xc.h"
+#include <xc.h>
+#include <stdio.h>
+
 #include "ES_Configure.h"
 #include "ES_Framework.h"
+#include "serial.h"
 
 #include "TapeEventChecker.h"
 #include "EdgeFollower.h"
 #include "robot.h"
 #include "pins.h"
+
 
 typedef enum {
   init,
@@ -27,6 +31,7 @@ static EdgeFollowerState CurrentState;
 static uint8_t MyPriority;
 
 uint8_t InitEdgeFollower(uint8_t priority) {
+  printf("in InitEdgeFollower\r\n");
   MyPriority = priority;
   CurrentState = init;
   return ES_PostToService(MyPriority, INIT_EVENT);
@@ -40,10 +45,11 @@ ES_Event RunEdgeFollower(ES_Event ThisEvent) {
   EdgeFollowerState nextState;
   uint8_t makeTransition = FALSE;
 
-  ES_Tattle();
+  //ES_Tattle();
 
   switch (CurrentState) {
     case init:
+      printf("state = init\r\n");
       if (ThisEvent.EventType == ES_INIT) {
         nextState = aligning;
         makeTransition = TRUE;
@@ -51,6 +57,7 @@ ES_Event RunEdgeFollower(ES_Event ThisEvent) {
       break;
 
     case aligning:
+      printf("state = aligning\r\n");
       switch (ThisEvent.EventType) {
         case ES_ENTRY:
           robot_cw();
@@ -67,6 +74,7 @@ ES_Event RunEdgeFollower(ES_Event ThisEvent) {
       break;
 
     case curving_left:
+      printf("state = curving_left\r\n");
       switch (ThisEvent.EventType) {
         case ES_ENTRY:
           robot_curve_l();
@@ -81,13 +89,14 @@ ES_Event RunEdgeFollower(ES_Event ThisEvent) {
 
         case TAPE_R:
           if (ThisEvent.EventParam == ON_BLACK) {
-            nextState = done;
+            nextState = aligning;
             makeTransition = TRUE;
           }
       }
       break;
 
     case curving_right:
+      printf("state = curving_right\r\n");
       switch (ThisEvent.EventType) {
         case ES_ENTRY:
           robot_curve_r();
@@ -102,13 +111,14 @@ ES_Event RunEdgeFollower(ES_Event ThisEvent) {
 
         case TAPE_R:
           if (ThisEvent.EventParam == ON_BLACK) {
-            nextState = done;
+            nextState = aligning;
             makeTransition = TRUE;
           }
       }
       break;
 
     case done:
+      printf("state = done\r\n");
       if (ThisEvent.EventType == ES_ENTRY) {
         robot_stop();
       }
@@ -121,7 +131,7 @@ ES_Event RunEdgeFollower(ES_Event ThisEvent) {
     RunEdgeFollower((ES_Event){.EventType = ES_ENTRY});
   }
 
-  ES_Tail();
+  //ES_Tail();
   return ThisEvent;
 }
 

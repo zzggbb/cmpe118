@@ -18,7 +18,7 @@ void robot_init(void) {
   // initialize drive motors
   PWM_Init();
   PWM_SetFrequency(MOTOR_PWM_FREQ);
-  PWM_AddPins(L_MOTOR_PWM | R_MOTOR_PWM);
+  PWM_AddPins(L_MOTOR_PWM | R_MOTOR_PWM | GUN_MOTOR);
   L_MOTOR_DIR_TRI = 0;
   R_MOTOR_DIR_TRI = 0;
   robot_stop();
@@ -26,7 +26,6 @@ void robot_init(void) {
   // initialize gun aiming servo motors
   RC_Init();
   RC_AddPins(GUN_PITCH_RC);
-  robot_gun_pitch(0);
 
   // initialize tape pins
   set_tris(TAPE_L_PIN, TRIS_INPUT);
@@ -35,6 +34,9 @@ void robot_init(void) {
   // initialize bump pins
   set_tris(BUMP_L_PIN, TRIS_INPUT);
   set_tris(BUMP_R_PIN, TRIS_INPUT);
+
+  // initialize beacon pins
+  set_tris(BEACON_PIN, TRIS_INPUT);
 }
 
 // drive robot forward
@@ -78,7 +80,7 @@ void robot_stop(void) {
 }
 
 void robot_curve_l(void) {
-  PWM_SetDutyCycle(L_MOTOR_PWM, 300);
+  PWM_SetDutyCycle(L_MOTOR_PWM, 350);
   PWM_SetDutyCycle(R_MOTOR_PWM, 500);
   L_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
   R_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
@@ -86,7 +88,7 @@ void robot_curve_l(void) {
 
 void robot_curve_r(void) {
   PWM_SetDutyCycle(L_MOTOR_PWM, 500);
-  PWM_SetDutyCycle(R_MOTOR_PWM, 300);
+  PWM_SetDutyCycle(R_MOTOR_PWM, 350);
   L_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
   R_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
 }

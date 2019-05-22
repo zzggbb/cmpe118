@@ -1,10 +1,10 @@
 #ifndef CONFIGURE_H
 #define CONFIGURE_H
 
-#define USE_KEYBOARD_INPUT // defines for keyboard input
-#define POSTFUNCTION_FOR_KEYBOARD_INPUT post_scanning_service
-#define USE_TATTLETALE
-#define SUPPRESS_EXIT_ENTRY_IN_TATTLE // supress the entry and exit events
+//#define USE_KEYBOARD_INPUT // defines for keyboard input
+//#define POSTFUNCTION_FOR_KEYBOARD_INPUT PostEdgeFollower
+//#define USE_TATTLETALE
+//#define SUPPRESS_EXIT_ENTRY_IN_TATTLE // supress the entry and exit events
 
 typedef enum {
     ES_NO_EVENT,
@@ -23,8 +23,11 @@ typedef enum {
     //
     TAPE_L,
     TAPE_R,
+
     BUMP_L,
     BUMP_R,
+
+    BEACON_CHANGE,
 
     NUMBEROFEVENTS,
 } ES_EventTyp_t;
@@ -46,8 +49,11 @@ static const char *EventNames[] = {
   //
   "TAPE_L",
   "TAPE_R",
+
   "BUMP_L",
   "BUMP_R",
+
+  "BEACON_CHANGE",
 
 	"NUMBEROFEVENTS",
 };
@@ -56,7 +62,7 @@ static const char *EventNames[] = {
 #define EVENT_CHECK_HEADER "AllEventCheckers.h"
 
 // Comma separated list of event checking functions
-#define EVENT_CHECK_LIST TapeEventChecker,BumpEventChecker
+#define EVENT_CHECK_LIST TapeEventChecker
 
 // These are the definitions for the post functions to be executed when the
 // corresponding timer expires. All 16 must be defined. If you are not using

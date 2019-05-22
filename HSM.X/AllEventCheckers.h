@@ -3,5 +3,6 @@
 
 #include "BumpEventChecker.h"
 #include "TapeEventChecker.h"
+#include "BeaconEventChecker.h"
 
 #endif

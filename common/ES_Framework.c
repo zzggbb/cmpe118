@@ -4,7 +4,7 @@
  Description
      source file for the core functions of the Events & Services framework
  Notes
-     
+
  History
  When           Who     What/Why
  -------------- ---     --------
@@ -62,7 +62,7 @@ static uint8_t CheckSystemEvents(void);
 // You fill in this array with the names of the service init & run functions
 // for each service that you use.
 // The order is: InitFunction, RunFunction
-// The first enry, at index 0, is the lowest priority, with increasing 
+// The first enry, at index 0, is the lowest priority, with increasing
 // priority with higher indices
 
 static ES_ServDesc_t const ServDescList[] = {
@@ -188,10 +188,12 @@ uint8_t Ready;
    J. Edward Carryer, 10/23/11,
  ****************************************************************************/
 ES_Return_t ES_Initialize(void) {
+  printf("in ES_Inititalize\r\n");
     unsigned char i;
     ES_Timer_Init(); // start up the timer subsystem
     // loop through the list testing for NULL pointers and
-    for (i = 0; i < ARRAY_SIZE(ServDescList); i++) {
+    printf("initializing some %d services\r\n", NUM_SERVICES);
+    for (i = 0; i < NUM_SERVICES; i++) {
         if ((ServDescList[i].InitFunc == (pInitFunc) 0) ||
                 (ServDescList[i].RunFunc == (pRunFunc) 0))
             return FailedPointer; // protect against NULL pointers
@@ -230,6 +232,7 @@ ES_Return_t ES_Run(void) {
     static ES_Event ThisEvent;
     uint8_t CurService;
     uint8_t CurServiceMask;
+    printf("in ES run\r\n");
 
     while (1) { // stay here unless we detect an error condition
 
@@ -271,7 +274,7 @@ ES_Return_t ES_Run(void) {
  Returns
    uint8_t : FALSE if any of the post functions failed during execution
  Description
-   posts to all of the services' queues 
+   posts to all of the services' queues
  Notes
 
  Author
@@ -338,7 +341,7 @@ uint8_t ES_PostToService(uint8_t WhichService, ES_Event TheEvent) {
  Notes
    currently only tests for incoming keystrokes
  Author
-   J. Edward Carryer, 10/23/11, 
+   J. Edward Carryer, 10/23/11,
  ****************************************************************************/
 static uint8_t CheckSystemEvents(void) {
 

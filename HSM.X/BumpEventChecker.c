@@ -1,4 +1,6 @@
-#include "xc.h"
+#include <xc.h>
+#include <stdio.h>
+
 #include "BOARD.h"
 #include "ES_Configure.h"
 #include "ES_Events.h"
@@ -59,7 +61,7 @@ uint8_t BumpEventChecker(void) {
   return was_event;
 }
 
-#include <stdio.h>
+#ifdef EVENTCHECKER_TEST
 static uint8_t(*EventList[])(void) = {BumpEventChecker};
 void PrintEvent(void) {
     printf("\r\nFunc: %s Event: %s Param: 0x%X", eventName,
@@ -83,3 +85,4 @@ void main(void) {
         }
     }
 }
+#endif

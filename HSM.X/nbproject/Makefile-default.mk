@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c ../common/AD.c ../common/BOARD.c ../common/ES_CheckEvents.c ../common/ES_Framework.c ../common/ES_KeyboardInput.c ../common/ES_PostList.c ../common/ES_Queue.c ../common/ES_TattleTale.c ../common/ES_Timers.c ../common/IO_Ports.c ../common/LED.c ../common/pwm.c ../common/RC_Servo.c ../common/roach.c ../common/robot.c ../common/serial.c ../common/timers.c ../common/pins.c DirectionAligner.c EdgeFollower.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c ../common/AD.c ../common/BOARD.c ../common/ES_CheckEvents.c ../common/ES_Framework.c ../common/ES_KeyboardInput.c ../common/ES_PostList.c ../common/ES_Queue.c ../common/ES_TattleTale.c ../common/ES_Timers.c ../common/IO_Ports.c ../common/LED.c ../common/pwm.c ../common/RC_Servo.c ../common/roach.c ../common/robot.c ../common/serial.c ../common/timers.c ../common/pins.c DirectionAligner.c EdgeFollower.c TapeEventChecker.c BumpEventChecker.c BeaconEventChecker.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/1270477542/AD.o ${OBJECTDIR}/_ext/1270477542/BOARD.o ${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o ${OBJECTDIR}/_ext/1270477542/ES_Framework.o ${OBJECTDIR}/_ext/1270477542/ES_KeyboardInput.o ${OBJECTDIR}/_ext/1270477542/ES_PostList.o ${OBJECTDIR}/_ext/1270477542/ES_Queue.o ${OBJECTDIR}/_ext/1270477542/ES_TattleTale.o ${OBJECTDIR}/_ext/1270477542/ES_Timers.o ${OBJECTDIR}/_ext/1270477542/IO_Ports.o ${OBJECTDIR}/_ext/1270477542/LED.o ${OBJECTDIR}/_ext/1270477542/pwm.o ${OBJECTDIR}/_ext/1270477542/RC_Servo.o ${OBJECTDIR}/_ext/1270477542/roach.o ${OBJECTDIR}/_ext/1270477542/robot.o ${OBJECTDIR}/_ext/1270477542/serial.o ${OBJECTDIR}/_ext/1270477542/timers.o ${OBJECTDIR}/_ext/1270477542/pins.o ${OBJECTDIR}/DirectionAligner.o ${OBJECTDIR}/EdgeFollower.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/_ext/1270477542/AD.o.d ${OBJECTDIR}/_ext/1270477542/BOARD.o.d ${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o.d ${OBJECTDIR}/_ext/1270477542/ES_Framework.o.d ${OBJECTDIR}/_ext/1270477542/ES_KeyboardInput.o.d ${OBJECTDIR}/_ext/1270477542/ES_PostList.o.d ${OBJECTDIR}/_ext/1270477542/ES_Queue.o.d ${OBJECTDIR}/_ext/1270477542/ES_TattleTale.o.d ${OBJECTDIR}/_ext/1270477542/ES_Timers.o.d ${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d ${OBJECTDIR}/_ext/1270477542/LED.o.d ${OBJECTDIR}/_ext/1270477542/pwm.o.d ${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d ${OBJECTDIR}/_ext/1270477542/roach.o.d ${OBJECTDIR}/_ext/1270477542/robot.o.d ${OBJECTDIR}/_ext/1270477542/serial.o.d ${OBJECTDIR}/_ext/1270477542/timers.o.d ${OBJECTDIR}/_ext/1270477542/pins.o.d ${OBJECTDIR}/DirectionAligner.o.d ${OBJECTDIR}/EdgeFollower.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/1270477542/AD.o ${OBJECTDIR}/_ext/1270477542/BOARD.o ${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o ${OBJECTDIR}/_ext/1270477542/ES_Framework.o ${OBJECTDIR}/_ext/1270477542/ES_KeyboardInput.o ${OBJECTDIR}/_ext/1270477542/ES_PostList.o ${OBJECTDIR}/_ext/1270477542/ES_Queue.o ${OBJECTDIR}/_ext/1270477542/ES_TattleTale.o ${OBJECTDIR}/_ext/1270477542/ES_Timers.o ${OBJECTDIR}/_ext/1270477542/IO_Ports.o ${OBJECTDIR}/_ext/1270477542/LED.o ${OBJECTDIR}/_ext/1270477542/pwm.o ${OBJECTDIR}/_ext/1270477542/RC_Servo.o ${OBJECTDIR}/_ext/1270477542/roach.o ${OBJECTDIR}/_ext/1270477542/robot.o ${OBJECTDIR}/_ext/1270477542/serial.o ${OBJECTDIR}/_ext/1270477542/timers.o ${OBJECTDIR}/_ext/1270477542/pins.o ${OBJECTDIR}/DirectionAligner.o ${OBJECTDIR}/EdgeFollower.o ${OBJECTDIR}/TapeEventChecker.o ${OBJECTDIR}/BumpEventChecker.o ${OBJECTDIR}/BeaconEventChecker.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/_ext/1270477542/AD.o.d ${OBJECTDIR}/_ext/1270477542/BOARD.o.d ${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o.d ${OBJECTDIR}/_ext/1270477542/ES_Framework.o.d ${OBJECTDIR}/_ext/1270477542/ES_KeyboardInput.o.d ${OBJECTDIR}/_ext/1270477542/ES_PostList.o.d ${OBJECTDIR}/_ext/1270477542/ES_Queue.o.d ${OBJECTDIR}/_ext/1270477542/ES_TattleTale.o.d ${OBJECTDIR}/_ext/1270477542/ES_Timers.o.d ${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d ${OBJECTDIR}/_ext/1270477542/LED.o.d ${OBJECTDIR}/_ext/1270477542/pwm.o.d ${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d ${OBJECTDIR}/_ext/1270477542/roach.o.d ${OBJECTDIR}/_ext/1270477542/robot.o.d ${OBJECTDIR}/_ext/1270477542/serial.o.d ${OBJECTDIR}/_ext/1270477542/timers.o.d ${OBJECTDIR}/_ext/1270477542/pins.o.d ${OBJECTDIR}/DirectionAligner.o.d ${OBJECTDIR}/EdgeFollower.o.d ${OBJECTDIR}/TapeEventChecker.o.d ${OBJECTDIR}/BumpEventChecker.o.d ${OBJECTDIR}/BeaconEventChecker.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/1270477542/AD.o ${OBJECTDIR}/_ext/1270477542/BOARD.o ${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o ${OBJECTDIR}/_ext/1270477542/ES_Framework.o ${OBJECTDIR}/_ext/1270477542/ES_KeyboardInput.o ${OBJECTDIR}/_ext/1270477542/ES_PostList.o ${OBJECTDIR}/_ext/1270477542/ES_Queue.o ${OBJECTDIR}/_ext/1270477542/ES_TattleTale.o ${OBJECTDIR}/_ext/1270477542/ES_Timers.o ${OBJECTDIR}/_ext/1270477542/IO_Ports.o ${OBJECTDIR}/_ext/1270477542/LED.o ${OBJECTDIR}/_ext/1270477542/pwm.o ${OBJECTDIR}/_ext/1270477542/RC_Servo.o ${OBJECTDIR}/_ext/1270477542/roach.o ${OBJECTDIR}/_ext/1270477542/robot.o ${OBJECTDIR}/_ext/1270477542/serial.o ${OBJECTDIR}/_ext/1270477542/timers.o ${OBJECTDIR}/_ext/1270477542/pins.o ${OBJECTDIR}/DirectionAligner.o ${OBJECTDIR}/EdgeFollower.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/1270477542/AD.o ${OBJECTDIR}/_ext/1270477542/BOARD.o ${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o ${OBJECTDIR}/_ext/1270477542/ES_Framework.o ${OBJECTDIR}/_ext/1270477542/ES_KeyboardInput.o ${OBJECTDIR}/_ext/1270477542/ES_PostList.o ${OBJECTDIR}/_ext/1270477542/ES_Queue.o ${OBJECTDIR}/_ext/1270477542/ES_TattleTale.o ${OBJECTDIR}/_ext/1270477542/ES_Timers.o ${OBJECTDIR}/_ext/1270477542/IO_Ports.o ${OBJECTDIR}/_ext/1270477542/LED.o ${OBJECTDIR}/_ext/1270477542/pwm.o ${OBJECTDIR}/_ext/1270477542/RC_Servo.o ${OBJECTDIR}/_ext/1270477542/roach.o ${OBJECTDIR}/_ext/1270477542/robot.o ${OBJECTDIR}/_ext/1270477542/serial.o ${OBJECTDIR}/_ext/1270477542/timers.o ${OBJECTDIR}/_ext/1270477542/pins.o ${OBJECTDIR}/DirectionAligner.o ${OBJECTDIR}/EdgeFollower.o ${OBJECTDIR}/TapeEventChecker.o ${OBJECTDIR}/BumpEventChecker.o ${OBJECTDIR}/BeaconEventChecker.o
 
 # Source Files
-SOURCEFILES=main.c ../common/AD.c ../common/BOARD.c ../common/ES_CheckEvents.c ../common/ES_Framework.c ../common/ES_KeyboardInput.c ../common/ES_PostList.c ../common/ES_Queue.c ../common/ES_TattleTale.c ../common/ES_Timers.c ../common/IO_Ports.c ../common/LED.c ../common/pwm.c ../common/RC_Servo.c ../common/roach.c ../common/robot.c ../common/serial.c ../common/timers.c ../common/pins.c DirectionAligner.c EdgeFollower.c
+SOURCEFILES=main.c ../common/AD.c ../common/BOARD.c ../common/ES_CheckEvents.c ../common/ES_Framework.c ../common/ES_KeyboardInput.c ../common/ES_PostList.c ../common/ES_Queue.c ../common/ES_TattleTale.c ../common/ES_Timers.c ../common/IO_Ports.c ../common/LED.c ../common/pwm.c ../common/RC_Servo.c ../common/roach.c ../common/robot.c ../common/serial.c ../common/timers.c ../common/pins.c DirectionAligner.c EdgeFollower.c TapeEventChecker.c BumpEventChecker.c BeaconEventChecker.c
 
 
 CFLAGS=
@@ -232,6 +232,24 @@ ${OBJECTDIR}/EdgeFollower.o: EdgeFollower.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/EdgeFollower.o 
 	@${FIXDEPS} "${OBJECTDIR}/EdgeFollower.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/EdgeFollower.o.d" -o ${OBJECTDIR}/EdgeFollower.o EdgeFollower.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/TapeEventChecker.o: TapeEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/TapeEventChecker.o.d 
+	@${RM} ${OBJECTDIR}/TapeEventChecker.o 
+	@${FIXDEPS} "${OBJECTDIR}/TapeEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/TapeEventChecker.o.d" -o ${OBJECTDIR}/TapeEventChecker.o TapeEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/BumpEventChecker.o: BumpEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/BumpEventChecker.o.d 
+	@${RM} ${OBJECTDIR}/BumpEventChecker.o 
+	@${FIXDEPS} "${OBJECTDIR}/BumpEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/BumpEventChecker.o.d" -o ${OBJECTDIR}/BumpEventChecker.o BumpEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/BeaconEventChecker.o: BeaconEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/BeaconEventChecker.o.d 
+	@${RM} ${OBJECTDIR}/BeaconEventChecker.o 
+	@${FIXDEPS} "${OBJECTDIR}/BeaconEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/BeaconEventChecker.o.d" -o ${OBJECTDIR}/BeaconEventChecker.o BeaconEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
 else
 ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -358,6 +376,24 @@ ${OBJECTDIR}/EdgeFollower.o: EdgeFollower.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/EdgeFollower.o.d 
 	@${RM} ${OBJECTDIR}/EdgeFollower.o 
 	@${FIXDEPS} "${OBJECTDIR}/EdgeFollower.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/EdgeFollower.o.d" -o ${OBJECTDIR}/EdgeFollower.o EdgeFollower.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/TapeEventChecker.o: TapeEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/TapeEventChecker.o.d 
+	@${RM} ${OBJECTDIR}/TapeEventChecker.o 
+	@${FIXDEPS} "${OBJECTDIR}/TapeEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/TapeEventChecker.o.d" -o ${OBJECTDIR}/TapeEventChecker.o TapeEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/BumpEventChecker.o: BumpEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/BumpEventChecker.o.d 
+	@${RM} ${OBJECTDIR}/BumpEventChecker.o 
+	@${FIXDEPS} "${OBJECTDIR}/BumpEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/BumpEventChecker.o.d" -o ${OBJECTDIR}/BumpEventChecker.o BumpEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/BeaconEventChecker.o: BeaconEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/BeaconEventChecker.o.d 
+	@${RM} ${OBJECTDIR}/BeaconEventChecker.o 
+	@${FIXDEPS} "${OBJECTDIR}/BeaconEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/BeaconEventChecker.o.d" -o ${OBJECTDIR}/BeaconEventChecker.o BeaconEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 endif
 

@@ -31,6 +31,10 @@
       <itemPath>../common/pins.h</itemPath>
       <itemPath>DirectionAligner.h</itemPath>
       <itemPath>EdgeFollower.h</itemPath>
+      <itemPath>AllEventCheckers.h</itemPath>
+      <itemPath>BeaconEventChecker.h</itemPath>
+      <itemPath>BumpEventChecker.h</itemPath>
+      <itemPath>TapeEventChecker.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -61,6 +65,9 @@
       <itemPath>../common/pins.c</itemPath>
       <itemPath>DirectionAligner.c</itemPath>
       <itemPath>EdgeFollower.c</itemPath>
+      <itemPath>TapeEventChecker.c</itemPath>
+      <itemPath>BumpEventChecker.c</itemPath>
+      <itemPath>BeaconEventChecker.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
