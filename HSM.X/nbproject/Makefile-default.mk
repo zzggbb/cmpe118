@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c ../common/AD.c ../common/BOARD.c ../common/ES_CheckEvents.c ../common/ES_Framework.c ../common/ES_KeyboardInput.c ../common/ES_PostList.c ../common/ES_Queue.c ../common/ES_TattleTale.c ../common/ES_Timers.c ../common/IO_Ports.c ../common/LED.c ../common/pwm.c ../common/RC_Servo.c ../common/roach.c ../common/robot.c ../common/serial.c ../common/timers.c ../common/pins.c DirectionAligner.c EdgeFollower.c TapeEventChecker.c BumpEventChecker.c BeaconEventChecker.c
+SOURCEFILES_QUOTED_IF_SPACED=../common/ES_CheckEvents.c ../common/ES_Framework.c ../common/ES_KeyboardInput.c ../common/ES_PostList.c ../common/ES_Queue.c ../common/ES_TattleTale.c ../common/ES_Timers.c ../common/timers.c ../common/serial.c ../common/pwm.c ../common/pins.c ../common/LED.c ../common/IO_Ports.c ../common/AD.c ../common/BOARD.c Attack.c BeaconAlign.c BeaconEventChecker.c BumpEventChecker.c FindIFZ.c ../common/RC_Servo.c hsm_main.c main.c ../common/robot.c Rotate90.c TapeEventChecker.c EdgeAlign.c EdgeFollower.c HSM.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/1270477542/AD.o ${OBJECTDIR}/_ext/1270477542/BOARD.o ${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o ${OBJECTDIR}/_ext/1270477542/ES_Framework.o ${OBJECTDIR}/_ext/1270477542/ES_KeyboardInput.o ${OBJECTDIR}/_ext/1270477542/ES_PostList.o ${OBJECTDIR}/_ext/1270477542/ES_Queue.o ${OBJECTDIR}/_ext/1270477542/ES_TattleTale.o ${OBJECTDIR}/_ext/1270477542/ES_Timers.o ${OBJECTDIR}/_ext/1270477542/IO_Ports.o ${OBJECTDIR}/_ext/1270477542/LED.o ${OBJECTDIR}/_ext/1270477542/pwm.o ${OBJECTDIR}/_ext/1270477542/RC_Servo.o ${OBJECTDIR}/_ext/1270477542/roach.o ${OBJECTDIR}/_ext/1270477542/robot.o ${OBJECTDIR}/_ext/1270477542/serial.o ${OBJECTDIR}/_ext/1270477542/timers.o ${OBJECTDIR}/_ext/1270477542/pins.o ${OBJECTDIR}/DirectionAligner.o ${OBJECTDIR}/EdgeFollower.o ${OBJECTDIR}/TapeEventChecker.o ${OBJECTDIR}/BumpEventChecker.o ${OBJECTDIR}/BeaconEventChecker.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/_ext/1270477542/AD.o.d ${OBJECTDIR}/_ext/1270477542/BOARD.o.d ${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o.d ${OBJECTDIR}/_ext/1270477542/ES_Framework.o.d ${OBJECTDIR}/_ext/1270477542/ES_KeyboardInput.o.d ${OBJECTDIR}/_ext/1270477542/ES_PostList.o.d ${OBJECTDIR}/_ext/1270477542/ES_Queue.o.d ${OBJECTDIR}/_ext/1270477542/ES_TattleTale.o.d ${OBJECTDIR}/_ext/1270477542/ES_Timers.o.d ${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d ${OBJECTDIR}/_ext/1270477542/LED.o.d ${OBJECTDIR}/_ext/1270477542/pwm.o.d ${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d ${OBJECTDIR}/_ext/1270477542/roach.o.d ${OBJECTDIR}/_ext/1270477542/robot.o.d ${OBJECTDIR}/_ext/1270477542/serial.o.d ${OBJECTDIR}/_ext/1270477542/timers.o.d ${OBJECTDIR}/_ext/1270477542/pins.o.d ${OBJECTDIR}/DirectionAligner.o.d ${OBJECTDIR}/EdgeFollower.o.d ${OBJECTDIR}/TapeEventChecker.o.d ${OBJECTDIR}/BumpEventChecker.o.d ${OBJECTDIR}/BeaconEventChecker.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o ${OBJECTDIR}/_ext/1270477542/ES_Framework.o ${OBJECTDIR}/_ext/1270477542/ES_KeyboardInput.o ${OBJECTDIR}/_ext/1270477542/ES_PostList.o ${OBJECTDIR}/_ext/1270477542/ES_Queue.o ${OBJECTDIR}/_ext/1270477542/ES_TattleTale.o ${OBJECTDIR}/_ext/1270477542/ES_Timers.o ${OBJECTDIR}/_ext/1270477542/timers.o ${OBJECTDIR}/_ext/1270477542/serial.o ${OBJECTDIR}/_ext/1270477542/pwm.o ${OBJECTDIR}/_ext/1270477542/pins.o ${OBJECTDIR}/_ext/1270477542/LED.o ${OBJECTDIR}/_ext/1270477542/IO_Ports.o ${OBJECTDIR}/_ext/1270477542/AD.o ${OBJECTDIR}/_ext/1270477542/BOARD.o ${OBJECTDIR}/Attack.o ${OBJECTDIR}/BeaconAlign.o ${OBJECTDIR}/BeaconEventChecker.o ${OBJECTDIR}/BumpEventChecker.o ${OBJECTDIR}/FindIFZ.o ${OBJECTDIR}/_ext/1270477542/RC_Servo.o ${OBJECTDIR}/hsm_main.o ${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/1270477542/robot.o ${OBJECTDIR}/Rotate90.o ${OBJECTDIR}/TapeEventChecker.o ${OBJECTDIR}/EdgeAlign.o ${OBJECTDIR}/EdgeFollower.o ${OBJECTDIR}/HSM.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o.d ${OBJECTDIR}/_ext/1270477542/ES_Framework.o.d ${OBJECTDIR}/_ext/1270477542/ES_KeyboardInput.o.d ${OBJECTDIR}/_ext/1270477542/ES_PostList.o.d ${OBJECTDIR}/_ext/1270477542/ES_Queue.o.d ${OBJECTDIR}/_ext/1270477542/ES_TattleTale.o.d ${OBJECTDIR}/_ext/1270477542/ES_Timers.o.d ${OBJECTDIR}/_ext/1270477542/timers.o.d ${OBJECTDIR}/_ext/1270477542/serial.o.d ${OBJECTDIR}/_ext/1270477542/pwm.o.d ${OBJECTDIR}/_ext/1270477542/pins.o.d ${OBJECTDIR}/_ext/1270477542/LED.o.d ${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d ${OBJECTDIR}/_ext/1270477542/AD.o.d ${OBJECTDIR}/_ext/1270477542/BOARD.o.d ${OBJECTDIR}/Attack.o.d ${OBJECTDIR}/BeaconAlign.o.d ${OBJECTDIR}/BeaconEventChecker.o.d ${OBJECTDIR}/BumpEventChecker.o.d ${OBJECTDIR}/FindIFZ.o.d ${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d ${OBJECTDIR}/hsm_main.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/_ext/1270477542/robot.o.d ${OBJECTDIR}/Rotate90.o.d ${OBJECTDIR}/TapeEventChecker.o.d ${OBJECTDIR}/EdgeAlign.o.d ${OBJECTDIR}/EdgeFollower.o.d ${OBJECTDIR}/HSM.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/1270477542/AD.o ${OBJECTDIR}/_ext/1270477542/BOARD.o ${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o ${OBJECTDIR}/_ext/1270477542/ES_Framework.o ${OBJECTDIR}/_ext/1270477542/ES_KeyboardInput.o ${OBJECTDIR}/_ext/1270477542/ES_PostList.o ${OBJECTDIR}/_ext/1270477542/ES_Queue.o ${OBJECTDIR}/_ext/1270477542/ES_TattleTale.o ${OBJECTDIR}/_ext/1270477542/ES_Timers.o ${OBJECTDIR}/_ext/1270477542/IO_Ports.o ${OBJECTDIR}/_ext/1270477542/LED.o ${OBJECTDIR}/_ext/1270477542/pwm.o ${OBJECTDIR}/_ext/1270477542/RC_Servo.o ${OBJECTDIR}/_ext/1270477542/roach.o ${OBJECTDIR}/_ext/1270477542/robot.o ${OBJECTDIR}/_ext/1270477542/serial.o ${OBJECTDIR}/_ext/1270477542/timers.o ${OBJECTDIR}/_ext/1270477542/pins.o ${OBJECTDIR}/DirectionAligner.o ${OBJECTDIR}/EdgeFollower.o ${OBJECTDIR}/TapeEventChecker.o ${OBJECTDIR}/BumpEventChecker.o ${OBJECTDIR}/BeaconEventChecker.o
+OBJECTFILES=${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o ${OBJECTDIR}/_ext/1270477542/ES_Framework.o ${OBJECTDIR}/_ext/1270477542/ES_KeyboardInput.o ${OBJECTDIR}/_ext/1270477542/ES_PostList.o ${OBJECTDIR}/_ext/1270477542/ES_Queue.o ${OBJECTDIR}/_ext/1270477542/ES_TattleTale.o ${OBJECTDIR}/_ext/1270477542/ES_Timers.o ${OBJECTDIR}/_ext/1270477542/timers.o ${OBJECTDIR}/_ext/1270477542/serial.o ${OBJECTDIR}/_ext/1270477542/pwm.o ${OBJECTDIR}/_ext/1270477542/pins.o ${OBJECTDIR}/_ext/1270477542/LED.o ${OBJECTDIR}/_ext/1270477542/IO_Ports.o ${OBJECTDIR}/_ext/1270477542/AD.o ${OBJECTDIR}/_ext/1270477542/BOARD.o ${OBJECTDIR}/Attack.o ${OBJECTDIR}/BeaconAlign.o ${OBJECTDIR}/BeaconEventChecker.o ${OBJECTDIR}/BumpEventChecker.o ${OBJECTDIR}/FindIFZ.o ${OBJECTDIR}/_ext/1270477542/RC_Servo.o ${OBJECTDIR}/hsm_main.o ${OBJECTDIR}/main.o ${OBJECTDIR}/_ext/1270477542/robot.o ${OBJECTDIR}/Rotate90.o ${OBJECTDIR}/TapeEventChecker.o ${OBJECTDIR}/EdgeAlign.o ${OBJECTDIR}/EdgeFollower.o ${OBJECTDIR}/HSM.o
 
 # Source Files
-SOURCEFILES=main.c ../common/AD.c ../common/BOARD.c ../common/ES_CheckEvents.c ../common/ES_Framework.c ../common/ES_KeyboardInput.c ../common/ES_PostList.c ../common/ES_Queue.c ../common/ES_TattleTale.c ../common/ES_Timers.c ../common/IO_Ports.c ../common/LED.c ../common/pwm.c ../common/RC_Servo.c ../common/roach.c ../common/robot.c ../common/serial.c ../common/timers.c ../common/pins.c DirectionAligner.c EdgeFollower.c TapeEventChecker.c BumpEventChecker.c BeaconEventChecker.c
+SOURCEFILES=../common/ES_CheckEvents.c ../common/ES_Framework.c ../common/ES_KeyboardInput.c ../common/ES_PostList.c ../common/ES_Queue.c ../common/ES_TattleTale.c ../common/ES_Timers.c ../common/timers.c ../common/serial.c ../common/pwm.c ../common/pins.c ../common/LED.c ../common/IO_Ports.c ../common/AD.c ../common/BOARD.c Attack.c BeaconAlign.c BeaconEventChecker.c BumpEventChecker.c FindIFZ.c ../common/RC_Servo.c hsm_main.c main.c ../common/robot.c Rotate90.c TapeEventChecker.c EdgeAlign.c EdgeFollower.c HSM.c
 
 
 CFLAGS=
@@ -106,24 +106,6 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o 
-	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1270477542/AD.o: ../common/AD.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/AD.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/AD.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/AD.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/AD.o.d" -o ${OBJECTDIR}/_ext/1270477542/AD.o ../common/AD.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1270477542/BOARD.o: ../common/BOARD.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/BOARD.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/BOARD.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/BOARD.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/BOARD.o.d" -o ${OBJECTDIR}/_ext/1270477542/BOARD.o ../common/BOARD.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
 ${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o: ../common/ES_CheckEvents.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
 	@${RM} ${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o.d 
@@ -166,41 +148,11 @@ ${OBJECTDIR}/_ext/1270477542/ES_Timers.o: ../common/ES_Timers.c  nbproject/Makef
 	@${RM} ${OBJECTDIR}/_ext/1270477542/ES_Timers.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/ES_Timers.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/ES_Timers.o.d" -o ${OBJECTDIR}/_ext/1270477542/ES_Timers.o ../common/ES_Timers.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/_ext/1270477542/IO_Ports.o: ../common/IO_Ports.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/_ext/1270477542/timers.o: ../common/timers.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/IO_Ports.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d" -o ${OBJECTDIR}/_ext/1270477542/IO_Ports.o ../common/IO_Ports.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1270477542/LED.o: ../common/LED.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/LED.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/LED.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/LED.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/LED.o.d" -o ${OBJECTDIR}/_ext/1270477542/LED.o ../common/LED.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1270477542/pwm.o: ../common/pwm.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/pwm.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/pwm.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/pwm.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/pwm.o.d" -o ${OBJECTDIR}/_ext/1270477542/pwm.o ../common/pwm.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1270477542/RC_Servo.o: ../common/RC_Servo.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/RC_Servo.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d" -o ${OBJECTDIR}/_ext/1270477542/RC_Servo.o ../common/RC_Servo.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1270477542/roach.o: ../common/roach.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/roach.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/roach.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/roach.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/roach.o.d" -o ${OBJECTDIR}/_ext/1270477542/roach.o ../common/roach.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1270477542/robot.o: ../common/robot.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/robot.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/robot.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/robot.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/robot.o.d" -o ${OBJECTDIR}/_ext/1270477542/robot.o ../common/robot.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/timers.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/timers.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/timers.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/timers.o.d" -o ${OBJECTDIR}/_ext/1270477542/timers.o ../common/timers.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/_ext/1270477542/serial.o: ../common/serial.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
@@ -208,11 +160,11 @@ ${OBJECTDIR}/_ext/1270477542/serial.o: ../common/serial.c  nbproject/Makefile-${
 	@${RM} ${OBJECTDIR}/_ext/1270477542/serial.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/serial.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/serial.o.d" -o ${OBJECTDIR}/_ext/1270477542/serial.o ../common/serial.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/_ext/1270477542/timers.o: ../common/timers.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/_ext/1270477542/pwm.o: ../common/pwm.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/timers.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/timers.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/timers.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/timers.o.d" -o ${OBJECTDIR}/_ext/1270477542/timers.o ../common/timers.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/pwm.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/pwm.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/pwm.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/pwm.o.d" -o ${OBJECTDIR}/_ext/1270477542/pwm.o ../common/pwm.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/_ext/1270477542/pins.o: ../common/pins.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
@@ -220,29 +172,41 @@ ${OBJECTDIR}/_ext/1270477542/pins.o: ../common/pins.c  nbproject/Makefile-${CND_
 	@${RM} ${OBJECTDIR}/_ext/1270477542/pins.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/pins.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/pins.o.d" -o ${OBJECTDIR}/_ext/1270477542/pins.o ../common/pins.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/DirectionAligner.o: DirectionAligner.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/DirectionAligner.o.d 
-	@${RM} ${OBJECTDIR}/DirectionAligner.o 
-	@${FIXDEPS} "${OBJECTDIR}/DirectionAligner.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/DirectionAligner.o.d" -o ${OBJECTDIR}/DirectionAligner.o DirectionAligner.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+${OBJECTDIR}/_ext/1270477542/LED.o: ../common/LED.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/LED.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/LED.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/LED.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/LED.o.d" -o ${OBJECTDIR}/_ext/1270477542/LED.o ../common/LED.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/EdgeFollower.o: EdgeFollower.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/EdgeFollower.o.d 
-	@${RM} ${OBJECTDIR}/EdgeFollower.o 
-	@${FIXDEPS} "${OBJECTDIR}/EdgeFollower.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/EdgeFollower.o.d" -o ${OBJECTDIR}/EdgeFollower.o EdgeFollower.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+${OBJECTDIR}/_ext/1270477542/IO_Ports.o: ../common/IO_Ports.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/IO_Ports.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d" -o ${OBJECTDIR}/_ext/1270477542/IO_Ports.o ../common/IO_Ports.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/TapeEventChecker.o: TapeEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/TapeEventChecker.o.d 
-	@${RM} ${OBJECTDIR}/TapeEventChecker.o 
-	@${FIXDEPS} "${OBJECTDIR}/TapeEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/TapeEventChecker.o.d" -o ${OBJECTDIR}/TapeEventChecker.o TapeEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+${OBJECTDIR}/_ext/1270477542/AD.o: ../common/AD.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/AD.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/AD.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/AD.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/AD.o.d" -o ${OBJECTDIR}/_ext/1270477542/AD.o ../common/AD.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/BumpEventChecker.o: BumpEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/_ext/1270477542/BOARD.o: ../common/BOARD.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/BOARD.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/BOARD.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/BOARD.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/BOARD.o.d" -o ${OBJECTDIR}/_ext/1270477542/BOARD.o ../common/BOARD.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/Attack.o: Attack.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/BumpEventChecker.o.d 
-	@${RM} ${OBJECTDIR}/BumpEventChecker.o 
-	@${FIXDEPS} "${OBJECTDIR}/BumpEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/BumpEventChecker.o.d" -o ${OBJECTDIR}/BumpEventChecker.o BumpEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${RM} ${OBJECTDIR}/Attack.o.d 
+	@${RM} ${OBJECTDIR}/Attack.o 
+	@${FIXDEPS} "${OBJECTDIR}/Attack.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/Attack.o.d" -o ${OBJECTDIR}/Attack.o Attack.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/BeaconAlign.o: BeaconAlign.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/BeaconAlign.o.d 
+	@${RM} ${OBJECTDIR}/BeaconAlign.o 
+	@${FIXDEPS} "${OBJECTDIR}/BeaconAlign.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/BeaconAlign.o.d" -o ${OBJECTDIR}/BeaconAlign.o BeaconAlign.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/BeaconEventChecker.o: BeaconEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -250,25 +214,73 @@ ${OBJECTDIR}/BeaconEventChecker.o: BeaconEventChecker.c  nbproject/Makefile-${CN
 	@${RM} ${OBJECTDIR}/BeaconEventChecker.o 
 	@${FIXDEPS} "${OBJECTDIR}/BeaconEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/BeaconEventChecker.o.d" -o ${OBJECTDIR}/BeaconEventChecker.o BeaconEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-else
+${OBJECTDIR}/BumpEventChecker.o: BumpEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/BumpEventChecker.o.d 
+	@${RM} ${OBJECTDIR}/BumpEventChecker.o 
+	@${FIXDEPS} "${OBJECTDIR}/BumpEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/BumpEventChecker.o.d" -o ${OBJECTDIR}/BumpEventChecker.o BumpEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/FindIFZ.o: FindIFZ.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/FindIFZ.o.d 
+	@${RM} ${OBJECTDIR}/FindIFZ.o 
+	@${FIXDEPS} "${OBJECTDIR}/FindIFZ.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/FindIFZ.o.d" -o ${OBJECTDIR}/FindIFZ.o FindIFZ.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/1270477542/RC_Servo.o: ../common/RC_Servo.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/RC_Servo.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d" -o ${OBJECTDIR}/_ext/1270477542/RC_Servo.o ../common/RC_Servo.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/hsm_main.o: hsm_main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/hsm_main.o.d 
+	@${RM} ${OBJECTDIR}/hsm_main.o 
+	@${FIXDEPS} "${OBJECTDIR}/hsm_main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/hsm_main.o.d" -o ${OBJECTDIR}/hsm_main.o hsm_main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
 ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.o.d 
 	@${RM} ${OBJECTDIR}/main.o 
-	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/_ext/1270477542/AD.o: ../common/AD.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/_ext/1270477542/robot.o: ../common/robot.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/AD.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/AD.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/AD.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/AD.o.d" -o ${OBJECTDIR}/_ext/1270477542/AD.o ../common/AD.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/robot.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/robot.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/robot.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/robot.o.d" -o ${OBJECTDIR}/_ext/1270477542/robot.o ../common/robot.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/_ext/1270477542/BOARD.o: ../common/BOARD.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/BOARD.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/BOARD.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/BOARD.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/BOARD.o.d" -o ${OBJECTDIR}/_ext/1270477542/BOARD.o ../common/BOARD.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+${OBJECTDIR}/Rotate90.o: Rotate90.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Rotate90.o.d 
+	@${RM} ${OBJECTDIR}/Rotate90.o 
+	@${FIXDEPS} "${OBJECTDIR}/Rotate90.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/Rotate90.o.d" -o ${OBJECTDIR}/Rotate90.o Rotate90.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
+${OBJECTDIR}/TapeEventChecker.o: TapeEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/TapeEventChecker.o.d 
+	@${RM} ${OBJECTDIR}/TapeEventChecker.o 
+	@${FIXDEPS} "${OBJECTDIR}/TapeEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/TapeEventChecker.o.d" -o ${OBJECTDIR}/TapeEventChecker.o TapeEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/EdgeAlign.o: EdgeAlign.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/EdgeAlign.o.d 
+	@${RM} ${OBJECTDIR}/EdgeAlign.o 
+	@${FIXDEPS} "${OBJECTDIR}/EdgeAlign.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/EdgeAlign.o.d" -o ${OBJECTDIR}/EdgeAlign.o EdgeAlign.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/EdgeFollower.o: EdgeFollower.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/EdgeFollower.o.d 
+	@${RM} ${OBJECTDIR}/EdgeFollower.o 
+	@${FIXDEPS} "${OBJECTDIR}/EdgeFollower.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/EdgeFollower.o.d" -o ${OBJECTDIR}/EdgeFollower.o EdgeFollower.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/HSM.o: HSM.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/HSM.o.d 
+	@${RM} ${OBJECTDIR}/HSM.o 
+	@${FIXDEPS} "${OBJECTDIR}/HSM.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -fframe-base-loclist  -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/HSM.o.d" -o ${OBJECTDIR}/HSM.o HSM.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+else
 ${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o: ../common/ES_CheckEvents.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
 	@${RM} ${OBJECTDIR}/_ext/1270477542/ES_CheckEvents.o.d 
@@ -311,41 +323,11 @@ ${OBJECTDIR}/_ext/1270477542/ES_Timers.o: ../common/ES_Timers.c  nbproject/Makef
 	@${RM} ${OBJECTDIR}/_ext/1270477542/ES_Timers.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/ES_Timers.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/ES_Timers.o.d" -o ${OBJECTDIR}/_ext/1270477542/ES_Timers.o ../common/ES_Timers.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/_ext/1270477542/IO_Ports.o: ../common/IO_Ports.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/_ext/1270477542/timers.o: ../common/timers.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/IO_Ports.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d" -o ${OBJECTDIR}/_ext/1270477542/IO_Ports.o ../common/IO_Ports.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1270477542/LED.o: ../common/LED.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/LED.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/LED.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/LED.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/LED.o.d" -o ${OBJECTDIR}/_ext/1270477542/LED.o ../common/LED.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1270477542/pwm.o: ../common/pwm.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/pwm.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/pwm.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/pwm.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/pwm.o.d" -o ${OBJECTDIR}/_ext/1270477542/pwm.o ../common/pwm.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1270477542/RC_Servo.o: ../common/RC_Servo.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/RC_Servo.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d" -o ${OBJECTDIR}/_ext/1270477542/RC_Servo.o ../common/RC_Servo.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1270477542/roach.o: ../common/roach.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/roach.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/roach.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/roach.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/roach.o.d" -o ${OBJECTDIR}/_ext/1270477542/roach.o ../common/roach.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
-	
-${OBJECTDIR}/_ext/1270477542/robot.o: ../common/robot.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/robot.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/robot.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/robot.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/robot.o.d" -o ${OBJECTDIR}/_ext/1270477542/robot.o ../common/robot.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/timers.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/timers.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/timers.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/timers.o.d" -o ${OBJECTDIR}/_ext/1270477542/timers.o ../common/timers.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/_ext/1270477542/serial.o: ../common/serial.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
@@ -353,11 +335,11 @@ ${OBJECTDIR}/_ext/1270477542/serial.o: ../common/serial.c  nbproject/Makefile-${
 	@${RM} ${OBJECTDIR}/_ext/1270477542/serial.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/serial.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/serial.o.d" -o ${OBJECTDIR}/_ext/1270477542/serial.o ../common/serial.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/_ext/1270477542/timers.o: ../common/timers.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/_ext/1270477542/pwm.o: ../common/pwm.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/timers.o.d 
-	@${RM} ${OBJECTDIR}/_ext/1270477542/timers.o 
-	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/timers.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/timers.o.d" -o ${OBJECTDIR}/_ext/1270477542/timers.o ../common/timers.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/pwm.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/pwm.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/pwm.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/pwm.o.d" -o ${OBJECTDIR}/_ext/1270477542/pwm.o ../common/pwm.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/_ext/1270477542/pins.o: ../common/pins.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
@@ -365,23 +347,47 @@ ${OBJECTDIR}/_ext/1270477542/pins.o: ../common/pins.c  nbproject/Makefile-${CND_
 	@${RM} ${OBJECTDIR}/_ext/1270477542/pins.o 
 	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/pins.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/pins.o.d" -o ${OBJECTDIR}/_ext/1270477542/pins.o ../common/pins.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/DirectionAligner.o: DirectionAligner.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/DirectionAligner.o.d 
-	@${RM} ${OBJECTDIR}/DirectionAligner.o 
-	@${FIXDEPS} "${OBJECTDIR}/DirectionAligner.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/DirectionAligner.o.d" -o ${OBJECTDIR}/DirectionAligner.o DirectionAligner.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+${OBJECTDIR}/_ext/1270477542/LED.o: ../common/LED.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/LED.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/LED.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/LED.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/LED.o.d" -o ${OBJECTDIR}/_ext/1270477542/LED.o ../common/LED.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/EdgeFollower.o: EdgeFollower.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/EdgeFollower.o.d 
-	@${RM} ${OBJECTDIR}/EdgeFollower.o 
-	@${FIXDEPS} "${OBJECTDIR}/EdgeFollower.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/EdgeFollower.o.d" -o ${OBJECTDIR}/EdgeFollower.o EdgeFollower.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+${OBJECTDIR}/_ext/1270477542/IO_Ports.o: ../common/IO_Ports.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/IO_Ports.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/IO_Ports.o.d" -o ${OBJECTDIR}/_ext/1270477542/IO_Ports.o ../common/IO_Ports.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/TapeEventChecker.o: TapeEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/_ext/1270477542/AD.o: ../common/AD.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/AD.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/AD.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/AD.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/AD.o.d" -o ${OBJECTDIR}/_ext/1270477542/AD.o ../common/AD.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/1270477542/BOARD.o: ../common/BOARD.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/BOARD.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/BOARD.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/BOARD.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/BOARD.o.d" -o ${OBJECTDIR}/_ext/1270477542/BOARD.o ../common/BOARD.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/Attack.o: Attack.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/TapeEventChecker.o.d 
-	@${RM} ${OBJECTDIR}/TapeEventChecker.o 
-	@${FIXDEPS} "${OBJECTDIR}/TapeEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/TapeEventChecker.o.d" -o ${OBJECTDIR}/TapeEventChecker.o TapeEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${RM} ${OBJECTDIR}/Attack.o.d 
+	@${RM} ${OBJECTDIR}/Attack.o 
+	@${FIXDEPS} "${OBJECTDIR}/Attack.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/Attack.o.d" -o ${OBJECTDIR}/Attack.o Attack.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/BeaconAlign.o: BeaconAlign.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/BeaconAlign.o.d 
+	@${RM} ${OBJECTDIR}/BeaconAlign.o 
+	@${FIXDEPS} "${OBJECTDIR}/BeaconAlign.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/BeaconAlign.o.d" -o ${OBJECTDIR}/BeaconAlign.o BeaconAlign.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/BeaconEventChecker.o: BeaconEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/BeaconEventChecker.o.d 
+	@${RM} ${OBJECTDIR}/BeaconEventChecker.o 
+	@${FIXDEPS} "${OBJECTDIR}/BeaconEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/BeaconEventChecker.o.d" -o ${OBJECTDIR}/BeaconEventChecker.o BeaconEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 ${OBJECTDIR}/BumpEventChecker.o: BumpEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -389,11 +395,65 @@ ${OBJECTDIR}/BumpEventChecker.o: BumpEventChecker.c  nbproject/Makefile-${CND_CO
 	@${RM} ${OBJECTDIR}/BumpEventChecker.o 
 	@${FIXDEPS} "${OBJECTDIR}/BumpEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/BumpEventChecker.o.d" -o ${OBJECTDIR}/BumpEventChecker.o BumpEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/BeaconEventChecker.o: BeaconEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/FindIFZ.o: FindIFZ.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/BeaconEventChecker.o.d 
-	@${RM} ${OBJECTDIR}/BeaconEventChecker.o 
-	@${FIXDEPS} "${OBJECTDIR}/BeaconEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/BeaconEventChecker.o.d" -o ${OBJECTDIR}/BeaconEventChecker.o BeaconEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	@${RM} ${OBJECTDIR}/FindIFZ.o.d 
+	@${RM} ${OBJECTDIR}/FindIFZ.o 
+	@${FIXDEPS} "${OBJECTDIR}/FindIFZ.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/FindIFZ.o.d" -o ${OBJECTDIR}/FindIFZ.o FindIFZ.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/1270477542/RC_Servo.o: ../common/RC_Servo.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/RC_Servo.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/RC_Servo.o.d" -o ${OBJECTDIR}/_ext/1270477542/RC_Servo.o ../common/RC_Servo.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/hsm_main.o: hsm_main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/hsm_main.o.d 
+	@${RM} ${OBJECTDIR}/hsm_main.o 
+	@${FIXDEPS} "${OBJECTDIR}/hsm_main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/hsm_main.o.d" -o ${OBJECTDIR}/hsm_main.o hsm_main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/_ext/1270477542/robot.o: ../common/robot.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}/_ext/1270477542" 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/robot.o.d 
+	@${RM} ${OBJECTDIR}/_ext/1270477542/robot.o 
+	@${FIXDEPS} "${OBJECTDIR}/_ext/1270477542/robot.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/_ext/1270477542/robot.o.d" -o ${OBJECTDIR}/_ext/1270477542/robot.o ../common/robot.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/Rotate90.o: Rotate90.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/Rotate90.o.d 
+	@${RM} ${OBJECTDIR}/Rotate90.o 
+	@${FIXDEPS} "${OBJECTDIR}/Rotate90.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/Rotate90.o.d" -o ${OBJECTDIR}/Rotate90.o Rotate90.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/TapeEventChecker.o: TapeEventChecker.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/TapeEventChecker.o.d 
+	@${RM} ${OBJECTDIR}/TapeEventChecker.o 
+	@${FIXDEPS} "${OBJECTDIR}/TapeEventChecker.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/TapeEventChecker.o.d" -o ${OBJECTDIR}/TapeEventChecker.o TapeEventChecker.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/EdgeAlign.o: EdgeAlign.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/EdgeAlign.o.d 
+	@${RM} ${OBJECTDIR}/EdgeAlign.o 
+	@${FIXDEPS} "${OBJECTDIR}/EdgeAlign.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/EdgeAlign.o.d" -o ${OBJECTDIR}/EdgeAlign.o EdgeAlign.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/EdgeFollower.o: EdgeFollower.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/EdgeFollower.o.d 
+	@${RM} ${OBJECTDIR}/EdgeFollower.o 
+	@${FIXDEPS} "${OBJECTDIR}/EdgeFollower.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/EdgeFollower.o.d" -o ${OBJECTDIR}/EdgeFollower.o EdgeFollower.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
+	
+${OBJECTDIR}/HSM.o: HSM.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/HSM.o.d 
+	@${RM} ${OBJECTDIR}/HSM.o 
+	@${FIXDEPS} "${OBJECTDIR}/HSM.o.d" $(SILENT) -rsi ${MP_CC_DIR}../  -c ${MP_CC}  $(MP_EXTRA_CC_PRE)  -g -x c -c -mprocessor=$(MP_PROCESSOR_OPTION)  -I"../common" -I"." -MMD -MF "${OBJECTDIR}/HSM.o.d" -o ${OBJECTDIR}/HSM.o HSM.c    -DXPRJ_default=$(CND_CONF)  -legacy-libc  $(COMPARISON_BUILD) 
 	
 endif
 

@@ -6,8 +6,8 @@
 #include "ES_Events.h"
 #include "serial.h"
 
-#include "EdgeFollower.h"
 #include "TapeEventChecker.h"
+#include "HSM.h"
 #include "pins.h"
 #include "robot.h"
 
@@ -81,8 +81,7 @@ uint8_t TapeEventChecker(void) {
       was_event = TRUE;
       ES_Event event = {.EventType = events[sensor], .EventParam = state[sensor]};
 
-      printf("tape event! param = %d\r\n", state[sensor]);
-      PostEdgeFollower(event);
+      PostHSM(event);
 
       last_state[sensor] = state[sensor];
     }

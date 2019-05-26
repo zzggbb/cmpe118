@@ -121,7 +121,7 @@ unsigned int PWM_GetFrequency(void)
  * @Function PWM_AddPins(unsigned short int AddPins)
  * @param AddPins - use #defined PWM_PORTxxx OR'd together for each A/D Pin you wish to add
  * @return SUCCESS OR ERROR
- * @brief  Adds new pins to the PWM system.  If any pin is already active it errors 
+ * @brief  Adds new pins to the PWM system.  If any pin is already active it errors
  * out
  * @author Max Dunne, 2013.08.15 */
 char PWM_AddPins(unsigned short int AddPins)
@@ -190,7 +190,7 @@ char PWM_RemovePins(unsigned int PWMPins)
  * @Function PWM_ListPins(void)
  * @param None
  * @return Listing of all PWM pins that are active.
- * @brief  Returns a variable of all active pwm pins. An individual pin can be determined 
+ * @brief  Returns a variable of all active pwm pins. An individual pin can be determined
  * if active by "anding" with the pwm_PORTXX Macros
  * @author Max Dunne, 2013.08.19 */
 unsigned int PWM_ListPins(void)

@@ -5,7 +5,7 @@
      source file for the module to post events to lists of state
      machines
  Notes
-     
+
  History
  When           Who     What/Why
  -------------- ---     --------
@@ -18,6 +18,9 @@
 #include "ES_General.h"
 #include "ES_PostList.h"
 #include "ES_ServiceHeaders.h"
+
+#define TRUE 1
+#define FALSE 0
 
 /*---------------------------- Module Functions ---------------------------*/
 static uint8_t PostToList(  PostFunc_t *const*FuncList, unsigned char ListSize, ES_Event NewEvent);
@@ -67,7 +70,7 @@ static PostFunc_t * const DistList07[] = {DIST_LIST7 };
  Description
    Posts NewEvent to all of the state machines listed in the list
  Notes
-   
+
  Author
    J. Edward Carryer, 10/24/11, 07:48
 ****************************************************************************/
@@ -123,7 +126,7 @@ uint8_t ES_PostList07( ES_Event NewEvent) {
    PostToList
  Parameters
    PostFunc *const*List : pointer to the list of posting functions
-   unsigned char ListSize : number of elements in the list array 
+   unsigned char ListSize : number of elements in the list array
    EF_Event NewEvent : the new event to be passed to each of the state machine
    posting functions in the list
  Returns
@@ -131,7 +134,7 @@ uint8_t ES_PostList07( ES_Event NewEvent) {
  Description
    Posts NewEvent to all of the state machines listed in the list
  Notes
-   
+
  Author
    J. Edward Carryer, 10/24/11, 07:52
 ****************************************************************************/

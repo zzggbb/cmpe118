@@ -8,24 +8,46 @@
 #include "robot.h"
 #include "pins.h"
 
-static float current_gun_pitch;
+#define MOTOR_PWM_MAX 0
+#define MOTOR_PWM_MIN 400
 
 int linear_scale(int x, int x1, int x2, int y1, int y2) {
   return (y2-y1) / (x2 - x1) * (x - x2) + y2;
 }
 
+uint32_t clip_speed(uint32_t speed) {
+  if (speed > 1000)
+    speed = 1000;
+
+  speed = 1000 - speed;
+  return speed;
+}
+
+uint32_t battery_voltage(void) {
+  // maximum battery voltage is
+  unsigned int reading = AD_ReadADPin(BATTERY_VOLTAGE_PIN);
+
+}
+
 void robot_init(void) {
-  // initialize drive motors
+  // initialize drive motors and gun motors
   PWM_Init();
   PWM_SetFrequency(MOTOR_PWM_FREQ);
-  PWM_AddPins(L_MOTOR_PWM | R_MOTOR_PWM | GUN_MOTOR);
+  PWM_AddPins(L_MOTOR_PWM | R_MOTOR_PWM | GUN_MOTOR_L | GUN_MOTOR_R);
   L_MOTOR_DIR_TRI = 0;
   R_MOTOR_DIR_TRI = 0;
+  PWM_SetDutyCycle(GUN_MOTOR_L, 0);
+  PWM_SetDutyCycle(GUN_MOTOR_R, 0);
   robot_stop();
 
-  // initialize gun aiming servo motors
+  // initialize battery measuring
+  AD_Init();
+  AD_AddPins(BATTERY_VOLTAGE_PIN);
+
+  // initialize gun loading servo motor
   RC_Init();
-  RC_AddPins(GUN_PITCH_RC);
+  RC_AddPins(GUN_LOADER_RC);
+  robot_gun_load();
 
   // initialize tape pins
   set_tris(TAPE_L_PIN, TRIS_INPUT);
@@ -40,33 +62,37 @@ void robot_init(void) {
 }
 
 // drive robot forward
-void robot_fwd(void) {
-  PWM_SetDutyCycle(L_MOTOR_PWM, 500);
-  PWM_SetDutyCycle(R_MOTOR_PWM, 500);
-  L_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
-  R_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
-}
-
-// drive robot backwards
-void robot_rev(void) {
-  PWM_SetDutyCycle(L_MOTOR_PWM, 500);
-  PWM_SetDutyCycle(R_MOTOR_PWM, 500);
+void robot_fwd(uint32_t speed) {
+  speed = clip_speed(speed);
+  PWM_SetDutyCycle(L_MOTOR_PWM, speed);
+  PWM_SetDutyCycle(R_MOTOR_PWM, speed);
   L_MOTOR_DIR_LAT = MOTOR_DIR_REV;
   R_MOTOR_DIR_LAT = MOTOR_DIR_REV;
 }
 
+// drive robot backwards
+void robot_rev(uint32_t speed) {
+  speed = clip_speed(speed);
+  PWM_SetDutyCycle(L_MOTOR_PWM, speed);
+  PWM_SetDutyCycle(R_MOTOR_PWM, speed);
+  L_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
+  R_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
+}
+
 // rotate robot clockwise
-void robot_cw(void) {
-  PWM_SetDutyCycle(L_MOTOR_PWM, 500);
-  PWM_SetDutyCycle(R_MOTOR_PWM, 500);
+void robot_cw(uint32_t speed) {
+  speed = clip_speed(speed);
+  PWM_SetDutyCycle(L_MOTOR_PWM, speed);
+  PWM_SetDutyCycle(R_MOTOR_PWM, speed);
   L_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
   R_MOTOR_DIR_LAT = MOTOR_DIR_REV;
 }
 
 // rotate robot counter clockwise
-void robot_ccw(void) {
-  PWM_SetDutyCycle(L_MOTOR_PWM, 500);
-  PWM_SetDutyCycle(R_MOTOR_PWM, 500);
+void robot_ccw(uint32_t speed) {
+  speed = clip_speed(speed);
+  PWM_SetDutyCycle(L_MOTOR_PWM, speed);
+  PWM_SetDutyCycle(R_MOTOR_PWM, speed);
   L_MOTOR_DIR_LAT = MOTOR_DIR_REV;
   R_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
 }
@@ -79,35 +105,34 @@ void robot_stop(void) {
   R_MOTOR_DIR_LAT = 0;
 }
 
-void robot_curve_l(void) {
-  PWM_SetDutyCycle(L_MOTOR_PWM, 350);
-  PWM_SetDutyCycle(R_MOTOR_PWM, 500);
-  L_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
-  R_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
+void robot_curve_l(uint32_t speed) {
+  PWM_SetDutyCycle(L_MOTOR_PWM, 100);
+  PWM_SetDutyCycle(R_MOTOR_PWM, speed);
+  L_MOTOR_DIR_LAT = MOTOR_DIR_REV;
+  R_MOTOR_DIR_LAT = MOTOR_DIR_REV;
 }
 
-void robot_curve_r(void) {
-  PWM_SetDutyCycle(L_MOTOR_PWM, 500);
-  PWM_SetDutyCycle(R_MOTOR_PWM, 350);
-  L_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
-  R_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
+void robot_curve_r(uint32_t speed) {
+  PWM_SetDutyCycle(L_MOTOR_PWM, speed);
+  PWM_SetDutyCycle(R_MOTOR_PWM, 100);
+  L_MOTOR_DIR_LAT = MOTOR_DIR_REV;
+  R_MOTOR_DIR_LAT = MOTOR_DIR_REV;
 }
 
-// move gun pitch to an absolute angle
-void robot_gun_pitch(float angle) {
-  if (angle < GUN_PITCH_MIN) angle = GUN_PITCH_MIN;
-  if (angle > GUN_PITCH_MAX) angle = GUN_PITCH_MAX;
-
-  unsigned short int pulse_time = linear_scale(
-    angle, GUN_PITCH_MIN, GUN_PITCH_MAX, GUN_PULSE_MIN, GUN_PULSE_MAX
-  );
-
-  RC_SetPulseTime(GUN_PITCH_RC, pulse_time);
-
-  current_gun_pitch = angle;
+void robot_gun_start(void) {
+  PWM_SetDutyCycle(GUN_MOTOR_L, 300);
+  PWM_SetDutyCycle(GUN_MOTOR_R, 300);
 }
 
-// move gun pitch up or down relative to the current gun pitch
-void robot_gun_pitch_adjust(float angle) {
-  robot_gun_pitch(current_gun_pitch + angle);
+void robot_gun_stop(void) {
+  PWM_SetDutyCycle(GUN_MOTOR_L, 0);
+  PWM_SetDutyCycle(GUN_MOTOR_R, 0);
+}
+
+void robot_gun_load(void) {
+  RC_SetPulseTime(GUN_LOADER_RC, 1000);
+}
+
+void robot_gun_shoot(void) {
+  RC_SetPulseTime(GUN_LOADER_RC, 2000);
 }

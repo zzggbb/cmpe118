@@ -7,6 +7,8 @@
 #include "serial.h"
 
 #include "BeaconEventChecker.h"
+#include "HSM.h"
+
 #include "pins.h"
 #include "robot.h"
 
@@ -28,7 +30,7 @@ uint8_t BeaconEventChecker(void) {
       .EventParam = current_beacon_reading,
     };
 
-    SaveEvent(event);
+    PostHSM(event);
 
     last_beacon_reading = current_beacon_reading;
     return TRUE;

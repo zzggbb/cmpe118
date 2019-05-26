@@ -2,7 +2,7 @@
 #define CONFIGURE_H
 
 //#define USE_KEYBOARD_INPUT // defines for keyboard input
-//#define POSTFUNCTION_FOR_KEYBOARD_INPUT PostEdgeFollower
+//#define POSTFUNCTION_FOR_KEYBOARD_INPUT PostBeaconAlign
 //#define USE_TATTLETALE
 //#define SUPPRESS_EXIT_ENTRY_IN_TATTLE // supress the entry and exit events
 
@@ -23,11 +23,14 @@ typedef enum {
     //
     TAPE_L,
     TAPE_R,
-
     BUMP_L,
     BUMP_R,
-
     BEACON_CHANGE,
+    BEACON_ALIGN_DONE,
+    EDGE_ALIGN_DONE,
+    EDGE_FOLLOW_DONE,
+    ROTATE_90_DONE,
+    FIND_IFZ_DONE,
 
     NUMBEROFEVENTS,
 } ES_EventTyp_t;
@@ -49,46 +52,59 @@ static const char *EventNames[] = {
   //
   "TAPE_L",
   "TAPE_R",
-
   "BUMP_L",
   "BUMP_R",
-
   "BEACON_CHANGE",
+  "BEACON_ALIGN_DONE",
+  "EDGE_ALIGN_DONE",
+  "EDGE_FOLLOW_DONE",
+  "ROTATE_90_DONE",
+  "FIND_IFZ_DONE",
 
-	"NUMBEROFEVENTS",
+  "NUMBEROFEVENTS",
 };
 
 // This are the name of the Event checking function header file.
 #define EVENT_CHECK_HEADER "AllEventCheckers.h"
 
 // Comma separated list of event checking functions
-#define EVENT_CHECK_LIST TapeEventChecker
+#define EVENT_CHECK_LIST BeaconEventChecker,TapeEventChecker,BumpEventChecker
 
 // These are the definitions for the post functions to be executed when the
 // corresponding timer expires. All 16 must be defined. If you are not using
 // a timers, then you can use TIMER_UNUSED
 #define TIMER_UNUSED ((pPostFunc)0)
-#define TIMER0_RESP_FUNC TIMER_UNUSED
-#define TIMER1_RESP_FUNC TIMER_UNUSED
-#define TIMER2_RESP_FUNC TIMER_UNUSED
-#define TIMER3_RESP_FUNC TIMER_UNUSED
-#define TIMER4_RESP_FUNC TIMER_UNUSED
-#define TIMER5_RESP_FUNC TIMER_UNUSED
-#define TIMER6_RESP_FUNC TIMER_UNUSED
-#define TIMER7_RESP_FUNC TIMER_UNUSED
-#define TIMER8_RESP_FUNC TIMER_UNUSED
-#define TIMER9_RESP_FUNC TIMER_UNUSED
-#define TIMER10_RESP_FUNC TIMER_UNUSED
-#define TIMER11_RESP_FUNC TIMER_UNUSED
-#define TIMER12_RESP_FUNC TIMER_UNUSED
-#define TIMER13_RESP_FUNC TIMER_UNUSED
-#define TIMER14_RESP_FUNC TIMER_UNUSED
-#define TIMER15_RESP_FUNC TIMER_UNUSED
+#define TIMER0_RESP_FUNC PostHSM
+#define TIMER1_RESP_FUNC PostHSM
+#define TIMER2_RESP_FUNC PostHSM
+#define TIMER3_RESP_FUNC PostHSM
+#define TIMER4_RESP_FUNC PostHSM
+#define TIMER5_RESP_FUNC PostHSM
+#define TIMER6_RESP_FUNC PostHSM
+#define TIMER7_RESP_FUNC PostHSM
+#define TIMER8_RESP_FUNC PostHSM
+#define TIMER9_RESP_FUNC PostHSM
+#define TIMER10_RESP_FUNC PostHSM
+#define TIMER11_RESP_FUNC PostHSM
+#define TIMER12_RESP_FUNC PostHSM
+#define TIMER13_RESP_FUNC PostHSM
+#define TIMER14_RESP_FUNC PostHSM
+#define TIMER15_RESP_FUNC PostHSM
 
 // Give the timer numbers symbolc names to make it easier to move them
 // to different timers if the need arises. Keep these definitons close to the
 // definitions for the response functions to make it easire to check that
 // the timer number matches where the timer event will be routed
+
+#define ALIGN_MIDDLE_TIMER 0
+#define ALIGN_NUDGE_TIMER 1
+#define ALIGN_STOP_TIMER 2
+#define WARMUP_TIMER 3
+#define FIRING_TIMER 4
+#define NINETY_TIMER 5
+#define FIRST_BACKUP_TIMER 6
+#define IFZ_BACKUP_TIMER 7
+#define CROSS_TIMER 8
 
 #define MAX_NUM_SERVICES 8 // don't change this
 
@@ -103,9 +119,9 @@ static const char *EventNames[] = {
 #define SERV_0_QUEUE_SIZE 9
 
 #if NUM_SERVICES > 1
-#define SERV_1_HEADER "EdgeFollower.h"
-#define SERV_1_INIT InitEdgeFollower
-#define SERV_1_RUN RunEdgeFollower
+#define SERV_1_HEADER "HSM.h"
+#define SERV_1_INIT InitHSM
+#define SERV_1_RUN RunHSM
 #define SERV_1_QUEUE_SIZE 3
 #endif
 
@@ -160,6 +176,7 @@ static const char *EventNames[] = {
 // should be a comma seperated list of post functions to indicate which
 // services are on that distribution list.
 #define NUM_DIST_LISTS 0
+
 #if NUM_DIST_LISTS > 0
 #define DIST_LIST0 PostTemplateFSM
 #endif

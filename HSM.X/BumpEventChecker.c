@@ -7,6 +7,7 @@
 #include "serial.h"
 
 #include "BumpEventChecker.h"
+#include "HSM.h"
 #include "pins.h"
 #include "robot.h"
 
@@ -53,7 +54,7 @@ uint8_t BumpEventChecker(void) {
       was_event = TRUE;
       ES_Event event = {.EventType = events[sensor], .EventParam = state[sensor]};
 
-      SaveEvent(event);
+      PostHSM(event);
 
       last_state[sensor] = state[sensor];
     }
