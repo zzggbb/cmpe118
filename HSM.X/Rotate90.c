@@ -11,7 +11,7 @@
 #include "robot.h"
 #include "pins.h"
 
-#define NINETY_TIMEOUT 1250 // milliseconds TODO: calibrate
+#define NINETY_TIMEOUT 785 // milliseconds TODO: calibrate
 
 typedef enum {
   uninitialized,
@@ -95,6 +95,7 @@ ES_Event RunRotate90(ES_Event ThisEvent) {
         case ES_ENTRY:
           printf("entry to Rotate90/done\r\n");
           PostHSM((ES_Event){.EventType = ROTATE_90_DONE});
+          CurrentState = uninitialized;
           break;
       }
       break;

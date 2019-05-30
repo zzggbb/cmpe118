@@ -46,7 +46,7 @@ static const char *StateNames[] = {
 static BeaconAlignState CurrentState = uninitialized;
 
 uint8_t InitBeaconAlign(void) {
-  printf("function called: InitBeaconAlign\r\n");
+  //printf("function called: InitBeaconAlign\r\n");
   CurrentState = finding_start;
   robot_cw(ROTATE_SPEED);
   return TRUE;
@@ -66,7 +66,7 @@ ES_Event RunBeaconAlign(ES_Event ThisEvent) {
       switch (ThisEvent.EventType) {
         case BEACON_CHANGE:
           if (ThisEvent.EventParam == BEACON_ON) {
-            printf("beacon turned on in finding_start\r\n");
+            //printf("beacon turned on in finding_start\r\n");
             // we found the start
             nextState = finding_end;
             ThisEvent.EventType = ES_NO_EVENT;
@@ -80,7 +80,7 @@ ES_Event RunBeaconAlign(ES_Event ThisEvent) {
 
     case finding_end:
       if (EventMatch(ThisEvent, BEACON_CHANGE, BEACON_OFF)) {
-        printf("beacon turned off in finding_end\r\n");
+        //printf("beacon turned off in finding_end\r\n");
         end_time = ES_Timer_GetTime();
         uint32_t diff = end_time - start_time;
 
@@ -88,12 +88,12 @@ ES_Event RunBeaconAlign(ES_Event ThisEvent) {
         makeTransition = TRUE;
 
         if ((end_time - start_time) < TIME_THRESHOLD) {
-          printf("beacon was a short blip: %d [ms]\r\n", end_time - start_time);
+         // printf("beacon was a short blip: %d [ms]\r\n", end_time - start_time);
           // we are far away from the beacon, so the FOV is small,
           // so we just get a blip on our detector.
           nextState = stopped;
         } else {
-          printf("beacon was a long pulse: %d [ms]\r\n", end_time - start_time);
+          //printf("beacon was a long pulse: %d [ms]\r\n", end_time - start_time);
           // we are close to the beacon, so the FOV is large.
           // we will sample the width and then stop halfway
           nextState = finding_start_again;
@@ -103,7 +103,7 @@ ES_Event RunBeaconAlign(ES_Event ThisEvent) {
 
     case finding_start_again:
       if (EventMatch(ThisEvent, BEACON_CHANGE, BEACON_ON)) {
-        printf("beacon turned on in finding_start_again\r\n");
+        //printf("beacon turned on in finding_start_again\r\n");
         nextState = finding_middle;
         ThisEvent.EventType = ES_NO_EVENT;
         makeTransition = TRUE;
@@ -113,13 +113,13 @@ ES_Event RunBeaconAlign(ES_Event ThisEvent) {
     case finding_middle:
       switch (ThisEvent.EventType) {
         case ES_ENTRY:
-          printf("entry to finding_middle\r\n");
+         // printf("entry to finding_middle\r\n");
           ES_Timer_InitTimer(ALIGN_MIDDLE_TIMER, 0.5*(end_time - start_time));
           break;
 
         case ES_TIMEOUT:
           if (ThisEvent.EventParam == ALIGN_MIDDLE_TIMER) {
-            printf("timeout from finding_middle\r\n");
+          //  printf("timeout from finding_middle\r\n");
             // we have arrived at the middle
             nextState = stopped;
             ThisEvent.EventType = ES_NO_EVENT;
@@ -132,13 +132,13 @@ ES_Event RunBeaconAlign(ES_Event ThisEvent) {
     case stopped:
       switch (ThisEvent.EventType) {
         case ES_ENTRY:
-          printf("entry to stopped\r\n");
+          //printf("entry to stopped\r\n");
           ES_Timer_InitTimer(ALIGN_STOP_TIMER, ALIGN_STOP_TIMEOUT);
           robot_stop();
           break;
 
         case ES_TIMEOUT:
-          printf("timeout from stopped\r\n");
+          //printf("timeout from stopped\r\n");
           if (ThisEvent.EventParam == ALIGN_STOP_TIMER) {
             nextState = nudging;
             ThisEvent.EventType = ES_NO_EVENT;
@@ -151,13 +151,13 @@ ES_Event RunBeaconAlign(ES_Event ThisEvent) {
     case nudging:
       switch (ThisEvent.EventType) {
         case ES_ENTRY:
-          printf("entry to nudging\r\n");
+          //printf("entry to nudging\r\n");
           ES_Timer_InitTimer(ALIGN_NUDGE_TIMER, ALIGN_NUDGE_TIMEOUT);
           robot_ccw(500);
           break;
 
         case ES_TIMEOUT:
-          printf("timeout from nudging\r\n");
+          //printf("timeout from nudging\r\n");
           if (ThisEvent.EventParam == ALIGN_NUDGE_TIMER) {
             robot_stop();
             nextState = done;
@@ -171,7 +171,9 @@ ES_Event RunBeaconAlign(ES_Event ThisEvent) {
     case done:
       switch (ThisEvent.EventType) {
         case ES_ENTRY:
+          //printf("entry to BeaconAlign/done\r\n");
           PostHSM((ES_Event){.EventType = BEACON_ALIGN_DONE});
+          CurrentState = uninitialized;
       }
       break;
 

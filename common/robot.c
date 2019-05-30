@@ -23,12 +23,6 @@ uint32_t clip_speed(uint32_t speed) {
   return speed;
 }
 
-uint32_t battery_voltage(void) {
-  // maximum battery voltage is
-  unsigned int reading = AD_ReadADPin(BATTERY_VOLTAGE_PIN);
-
-}
-
 void robot_init(void) {
   // initialize drive motors and gun motors
   PWM_Init();
@@ -40,14 +34,14 @@ void robot_init(void) {
   PWM_SetDutyCycle(GUN_MOTOR_R, 0);
   robot_stop();
 
-  // initialize battery measuring
   AD_Init();
-  AD_AddPins(BATTERY_VOLTAGE_PIN);
+  AD_AddPins(BEACON_ANALOG_PIN);
 
-  // initialize gun loading servo motor
+  // initialize gun loading servo and beacon popup servo
   RC_Init();
-  RC_AddPins(GUN_LOADER_RC);
+  RC_AddPins(GUN_LOADER_RC | BEACON_POP_RC);
   robot_gun_load();
+  robot_beacon_up();
 
   // initialize tape pins
   set_tris(TAPE_L_PIN, TRIS_INPUT);
@@ -106,15 +100,15 @@ void robot_stop(void) {
 }
 
 void robot_curve_l(uint32_t speed) {
-  PWM_SetDutyCycle(L_MOTOR_PWM, 100);
-  PWM_SetDutyCycle(R_MOTOR_PWM, speed);
+  PWM_SetDutyCycle(L_MOTOR_PWM, speed);
+  PWM_SetDutyCycle(R_MOTOR_PWM, speed + 100);
   L_MOTOR_DIR_LAT = MOTOR_DIR_REV;
   R_MOTOR_DIR_LAT = MOTOR_DIR_REV;
 }
 
 void robot_curve_r(uint32_t speed) {
-  PWM_SetDutyCycle(L_MOTOR_PWM, speed);
-  PWM_SetDutyCycle(R_MOTOR_PWM, 100);
+  PWM_SetDutyCycle(L_MOTOR_PWM, speed + 100);
+  PWM_SetDutyCycle(R_MOTOR_PWM, speed);
   L_MOTOR_DIR_LAT = MOTOR_DIR_REV;
   R_MOTOR_DIR_LAT = MOTOR_DIR_REV;
 }
@@ -135,4 +129,22 @@ void robot_gun_load(void) {
 
 void robot_gun_shoot(void) {
   RC_SetPulseTime(GUN_LOADER_RC, 2000);
+}
+
+void robot_beacon_up(void) {
+  int i;
+  int j;
+  for (i=1000; i<=2000; i+=50) {
+    RC_SetPulseTime(BEACON_POP_RC, i);
+    for (j=0; j<10e5; j++);
+  }
+}
+
+void robot_beacon_down(void) {
+  int i;
+  int j;
+  for (i=2000; i>=1000; i-=50) {
+    RC_SetPulseTime(BEACON_POP_RC, i);
+    for (j=0; j<10e5; j++);
+  }
 }

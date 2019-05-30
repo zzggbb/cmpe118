@@ -9,13 +9,24 @@
 #include "pins.h"
 #include "robot.h"
 
+#define BEACON_EVENT_TEST 0
+
 //#define TEST_HARNESS
 //#define MOTOR_TEST
+#define SENSOR_TEST
+//#define GUN_TEST
 
 void delay(uint32_t cycles){
   int i;
   for (i=0; i<cycles; i++);
 }
+
+#if BEACON_EVENT_TEST
+
+  #define EVENTCHECKER_TEST
+  #include "BeaconEventChecker.c"
+
+#else
 
 void main(void) {
   BOARD_Init();
@@ -25,18 +36,42 @@ void main(void) {
   printf("project: HSM\r\n");
   printf("compiled: " __DATE__ " " __TIME__ "\r\n");
 
-#ifdef MOTOR_TEST
-  uint32_t speed;
-  for(;;) {
-    for (speed = 500; speed >= 0; speed -= 25) {
-      printf("speed = %d\r\n", speed);
-      robot_curve_l(speed);
-      delay(1e6);
-    }
+#ifdef SENSOR_TEST
+  for (;;) {
+    printf("bump(%d %d) tape(%d %d) beacon(%d %d)\r\n",
+      read_pin(BUMP_L_PIN), read_pin(BUMP_R_PIN),
+      read_pin(TAPE_L_PIN), read_pin(TAPE_R_PIN),
+      read_pin(BEACON_PIN), AD_ReadADPin(BEACON_ANALOG_PIN)
+    );
+    delay(10e5);
   }
 #endif
 
-#ifdef TEST_HARNESS
+#ifdef GUN_TEST
+  printf("starting gun motors\r\n");
+  robot_gun_start();
+  for(;;);
+
+  for(;;) {
+    printf("loading gun\r\n");
+    robot_gun_load();
+    delay(1e6);
+
+    printf("shooting gun\r\n");
+    robot_gun_shoot();
+    delay(1e6);
+
+    printf("beacon up\r\n");
+    //robot_beacon_up();
+    delay(1e6);
+
+    printf("beacon down\r\n");
+    //robot_beacon_down();
+    delay(1e6);
+  }
+#endif
+
+#ifdef MOTOR_TEST
   for (;;) {
     printf("going forward\r\n");
     robot_fwd(500);
@@ -55,11 +90,11 @@ void main(void) {
     delay(5e6);
 
     printf("curving left\r\n");
-    robot_curve_l();
+    robot_curve_l(500);
     delay(5e6);
 
     printf("curving right\r\n");
-    robot_curve_r();
+    robot_curve_r(500);
     delay(5e6);
   }
 
@@ -87,3 +122,4 @@ void main(void) {
 
   for (;;);
 }
+#endif

@@ -5,6 +5,7 @@
 #include "ES_Framework.h"
 
 #include "TapeEventChecker.h"
+#include "BumpEventChecker.h"
 #include "EdgeAlign.h"
 #include "EdgeFollower.h"
 #include "Rotate90.h"
@@ -16,7 +17,7 @@
 #include "pins.h"
 
 #define IFZ_BACKUP_TIMEOUT 250
-#define CROSS_TIMEOUT 4000
+#define CROSS_TIMEOUT 3000
 
 typedef enum {
   uninitialized,
@@ -30,8 +31,8 @@ typedef enum {
   crossing_to_left,
   waiting_for_edge_left,
   waiting_for_edge_right,
-  aligning_left,
-  aligning_right,
+  aligning_left_sensor,
+  aligning_right_sensor,
   done,
 } FindIFZState;
 
@@ -47,8 +48,8 @@ static const char *StateNames[] = {
   "crossing_to_left",
   "waiting_for_edge_left",
   "waiting_for_edge_right",
-  "aligning_left",
-  "aligning_right",
+  "aligning_left_sensor",
+  "aligning_right_sensor",
   "done",
 };
 
@@ -69,18 +70,20 @@ ES_Event RunFindIFZ(ES_Event ThisEvent) {
   ES_Tattle();
 
   switch (CurrentState) {
-
     case following_left:
       ThisEvent = RunEdgeFollower(ThisEvent);
       switch (ThisEvent.EventType) {
         case BUMP_L:
         case BUMP_R:
-          robot_stop();
-          nextState = backing_up_left;
-          makeTransition = TRUE;
+          if (ThisEvent.EventParam == PRESSED) {
+            robot_stop();
+            nextState = backing_up_left;
+            makeTransition = TRUE;
+          }
           break;
 
         case EDGE_FOLLOW_DONE:
+          PostHSM((ES_Event){.EventType = FIND_IFZ_LEFT_DONE});
           nextState = done;
           makeTransition = TRUE;
           break;
@@ -102,6 +105,7 @@ ES_Event RunFindIFZ(ES_Event ThisEvent) {
           break;
 
         case EDGE_FOLLOW_DONE:
+          PostHSM((ES_Event){.EventType = FIND_IFZ_RIGHT_DONE});
           nextState = done;
           makeTransition = TRUE;
           break;
@@ -188,28 +192,6 @@ ES_Event RunFindIFZ(ES_Event ThisEvent) {
       }
       break;
 
-    case crossing_to_right:
-      switch (ThisEvent.EventType) {
-        case ES_ENTRY:
-          robot_fwd(500);
-          ES_Timer_InitTimer(CROSS_TIMER, CROSS_TIMEOUT);
-          printf("entry to FindIFZ/crossing_right\r\n");
-          break;
-
-        case ES_TIMEOUT:
-          if (ThisEvent.EventParam == CROSS_TIMER) {
-            printf("timeout from FindIFZ/crossing_right\r\n");
-            nextState = waiting_for_edge_right;
-            makeTransition = TRUE;
-          }
-          break;
-
-        case ES_EXIT:
-          printf("exit from FindIFZ/crossing_right\r\n");
-          break;
-      }
-      break;
-
     case crossing_to_left:
       switch (ThisEvent.EventType) {
         case ES_ENTRY:
@@ -232,13 +214,35 @@ ES_Event RunFindIFZ(ES_Event ThisEvent) {
       }
       break;
 
+    case crossing_to_right:
+      switch (ThisEvent.EventType) {
+        case ES_ENTRY:
+          robot_fwd(500);
+          ES_Timer_InitTimer(CROSS_TIMER, CROSS_TIMEOUT);
+          printf("entry to FindIFZ/crossing_right\r\n");
+          break;
+
+        case ES_TIMEOUT:
+          if (ThisEvent.EventParam == CROSS_TIMER) {
+            printf("timeout from FindIFZ/crossing_right\r\n");
+            nextState = waiting_for_edge_right;
+            makeTransition = TRUE;
+          }
+          break;
+
+        case ES_EXIT:
+          printf("exit from FindIFZ/crossing_right\r\n");
+          break;
+      }
+      break;
+
     case waiting_for_edge_left:
+      robot_fwd(500);
       switch (ThisEvent.EventType) {
         case TAPE_L:
-        case TAPE_R:
           if (ThisEvent.EventParam == ON_WHITE) {
             robot_stop();
-            nextState = aligning_left;
+            nextState = aligning_right_sensor;
             makeTransition = TRUE;
           }
           break;
@@ -254,12 +258,12 @@ ES_Event RunFindIFZ(ES_Event ThisEvent) {
       break;
 
     case waiting_for_edge_right:
+      robot_fwd(500);
       switch (ThisEvent.EventType) {
-        case TAPE_L:
         case TAPE_R:
           if (ThisEvent.EventParam == ON_WHITE) {
             robot_stop();
-            nextState = aligning_right;
+            nextState = aligning_left_sensor;
             makeTransition = TRUE;
           }
           break;
@@ -274,51 +278,49 @@ ES_Event RunFindIFZ(ES_Event ThisEvent) {
       }
       break;
 
-    case aligning_left:
-      ThisEvent = RunEdgeAlign(ThisEvent);
+    case aligning_left_sensor:
       switch (ThisEvent.EventType) {
         case ES_ENTRY:
-          InitEdgeAlign(LEFT);
-          printf("entry to FindIFZ/aligning_left\r\n");
+          robot_cw(500);
+          printf("entry to FindIFZ/aligning_left_sensor\r\n");
           break;
 
-        case EDGE_ALIGN_DONE:
-          nextState = following_left;
-          makeTransition = TRUE;
+        case TAPE_L:
+          if (ThisEvent.EventParam == ON_BLACK) {
+            InitEdgeFollower(LEFT);
+            nextState = following_left;
+            makeTransition = TRUE;
+          }
           break;
 
         case ES_EXIT:
-          printf("exit from FindIFZ/aligning_left\r\n");
+          printf("exit from FindIFZ/aligning_left_sensor\r\n");
           break;
       }
       break;
 
-    case aligning_right:
-      ThisEvent = RunEdgeAlign(ThisEvent);
+    case aligning_right_sensor:
       switch (ThisEvent.EventType) {
         case ES_ENTRY:
-          InitEdgeAlign(RIGHT);
-          printf("entry to FindIFZ/aligning_right\r\n");
+          robot_ccw(500);
+          printf("entry to FindIFZ/aligning_right_sensor\r\n");
           break;
 
-        case EDGE_ALIGN_DONE:
-          nextState = following_right;
-          makeTransition = TRUE;
+        case TAPE_R:
+          if (ThisEvent.EventParam == ON_BLACK) {
+            InitEdgeFollower(RIGHT);
+            nextState = following_right;
+            makeTransition = TRUE;
+          }
           break;
 
         case ES_EXIT:
-          printf("exit from FindIFZ/aligning_right\r\n");
+          printf("exit from FindIFZ/aligning_right_sensor\r\n");
           break;
       }
       break;
 
     case done:
-      switch (ThisEvent.EventType) {
-        case ES_ENTRY:
-          printf("entry to FindIFZ/done\r\n");
-          PostHSM((ES_Event){.EventType = FIND_IFZ_DONE});
-          break;
-      }
       break;
 
   }

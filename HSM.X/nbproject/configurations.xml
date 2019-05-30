@@ -33,6 +33,7 @@
         <itemPath>EdgeAlign.h</itemPath>
         <itemPath>EdgeFollower.h</itemPath>
         <itemPath>HSM.h</itemPath>
+        <itemPath>ShootN.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="UNO_h" projectFiles="true">
         <itemPath>../common/IO_Ports.h</itemPath>
@@ -77,6 +78,7 @@
         <itemPath>EdgeAlign.c</itemPath>
         <itemPath>EdgeFollower.c</itemPath>
         <itemPath>HSM.c</itemPath>
+        <itemPath>ShootN.c</itemPath>
       </logicalFolder>
       <logicalFolder name="f2" displayName="UNO_c" projectFiles="true">
         <itemPath>../common/timers.c</itemPath>

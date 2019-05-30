@@ -5,6 +5,8 @@
 #include "pwm.h"
 #include "AD.h"
 
+#define FAKE_BEACON 0
+
 #define EventMatch(e,t,p) (e.EventType == t && e.EventParam == p)
 
 #define TRIS_INPUT 1
@@ -38,17 +40,24 @@
 #define GUN_MOTOR_L PWM_PORTY10 // silk pin 6
 #define GUN_MOTOR_R PWM_PORTX11 // silk pin 10
 
-#define GUN_LOADER_RC RC_PORTX03 // silk pin 40
+#define BEACON_POP_RC RC_PORTY06 // silk pin 8
+#define GUN_LOADER_RC RC_PORTY07 // silk pin 33
 
-#define BEACON_PIN 34
+#define FAKE_BEACON_PIN 34
+
+#if FAKE_BEACON
+  #define BEACON_PIN 7
+#else
+  #define BEACON_PIN FAKE_BEACON_PIN
+#endif
+
+#define BEACON_ANALOG_PIN AD_PORTV7
 
 #define TAPE_L_PIN 32
-#define TAPE_R_PIN 33
+#define TAPE_R_PIN 31
 
-#define BUMP_L_PIN 37
-#define BUMP_R_PIN 38
-
-#define BATTERY_VOLTAGE_PIN AD_PORTV7 // silk pin A2
+#define BUMP_L_PIN 28
+#define BUMP_R_PIN 29
 
 void robot_init(void);
 void robot_fwd(uint32_t speed);
@@ -62,5 +71,7 @@ void robot_gun_start(void);
 void robot_gun_stop(void);
 void robot_gun_load(void);
 void robot_gun_shoot(void);
+void robot_beacon_up(void);
+void robot_beacon_down(void);
 
 #endif

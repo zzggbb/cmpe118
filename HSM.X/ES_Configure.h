@@ -30,7 +30,9 @@ typedef enum {
     EDGE_ALIGN_DONE,
     EDGE_FOLLOW_DONE,
     ROTATE_90_DONE,
-    FIND_IFZ_DONE,
+    FIND_IFZ_LEFT_DONE,
+    FIND_IFZ_RIGHT_DONE,
+    SHOOTN_DONE,
 
     NUMBEROFEVENTS,
 } ES_EventTyp_t;
@@ -59,7 +61,9 @@ static const char *EventNames[] = {
   "EDGE_ALIGN_DONE",
   "EDGE_FOLLOW_DONE",
   "ROTATE_90_DONE",
-  "FIND_IFZ_DONE",
+  "FIND_IFZ_LEFT_DONE",
+  "FIND_IFZ_RIGHT_DONE",
+  "SHOOTN_DONE",
 
   "NUMBEROFEVENTS",
 };
@@ -105,6 +109,7 @@ static const char *EventNames[] = {
 #define FIRST_BACKUP_TIMER 6
 #define IFZ_BACKUP_TIMER 7
 #define CROSS_TIMER 8
+#define NEXT_POSITION_TIMER 9
 
 #define MAX_NUM_SERVICES 8 // don't change this
 

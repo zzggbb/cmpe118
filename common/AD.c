@@ -365,6 +365,7 @@ void __ISR(_ADC_VECTOR, ipl1auto) ADCIntHandler(void)
     for (CurPin = 0; CurPin <= PinCount; CurPin++) {
         ADValues[CurPin] = ReadADC10(CurPin); //read in new set of values
     }
+    /*
     //calculate new filtered battery voltage
     Filt_BatVoltage = (Filt_BatVoltage * KEEP_FILT + AD_ReadADPin(BAT_VOLTAGE_MONITOR) * ADD_FILT) >> SHIFT_FILT;
 
@@ -387,6 +388,7 @@ void __ISR(_ADC_VECTOR, ipl1auto) ADCIntHandler(void)
             }
         }
     }
+    */
     //if pins are changed add pins
     if (PinsToAdd | PinsToRemove) {
         AD_SetPins();

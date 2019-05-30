@@ -5,30 +5,47 @@
 #include "ES_Framework.h"
 
 #include "Attack.h"
+#include "BeaconAlign.h"
+#include "TapeEventChecker.h"
+#include "EdgeFollower.h"
+#include "ShootN.h"
+
 #include "robot.h"
 #include "pins.h"
 
-#define WARMUP_TIMEOUT 10000 // milliseconds
-#define FIRING_TIMEOUT 1000 // milliseconds
+#define WARMUP_TIMEOUT 10000 // time for warming up launch motors [milliseconds]
+#define FIELD_WIDTH 2750 // time needed to cross the field [milliseconds]
+
+static uint8_t current_position = 0;
+static uint8_t num_positions = 5;
+static uint8_t shots_per_position[] = {0,1,11,1,0};
 
 typedef enum {
   uninitialized,
   warming_up,
+  beacon_aligning,
   shooting,
-  loading,
+  edge_aligning,
+  finding_next_position,
+  done,
 } AttackState;
 
 static const char *StateNames[] = {
   "uninitialized",
   "warming_up",
+  "beacon_aligning",
   "shooting",
-  "loading",
+  "edge_aligning",
+  "finding_next_position",
+  "done",
 };
 
 static AttackState CurrentState = uninitialized;
+static uint8_t dir;
 
-uint8_t InitAttack(void) {
+uint8_t InitAttack(uint8_t _dir) {
   printf("function call: InitAttack\r\n");
+  dir = _dir;
   CurrentState = warming_up;
   ES_Timer_InitTimer(WARMUP_TIMER, WARMUP_TIMEOUT);
   robot_gun_start();
@@ -47,7 +64,7 @@ ES_Event RunAttack(ES_Event ThisEvent) {
         case ES_TIMEOUT:
           if (ThisEvent.EventParam == WARMUP_TIMER) {
             printf("timeout in warming_up\r\n");
-            nextState = shooting;
+            nextState = beacon_aligning;
             makeTransition = TRUE;
           }
           break;
@@ -58,50 +75,92 @@ ES_Event RunAttack(ES_Event ThisEvent) {
       }
       break;
 
+    case beacon_aligning:
+      ThisEvent = RunBeaconAlign(ThisEvent);
+      switch (ThisEvent.EventType) {
+        case ES_ENTRY:
+          printf("entry to Attack/beacon_aligning\r\n");
+          InitBeaconAlign();
+          break;
+
+        case BEACON_ALIGN_DONE:
+          printf("done aligning beacon, now shooting shots_per_position[%d] = %d shots\r\n",
+              current_position, shots_per_position[current_position]);
+          InitShootN(shots_per_position[current_position]);
+          nextState = shooting;
+          makeTransition = TRUE;
+          break;
+      }
+      break;
+
     case shooting:
+      ThisEvent = RunShootN(ThisEvent);
+      if (ThisEvent.EventType == SHOOTN_DONE) {
+        current_position++;
+        if (current_position == num_positions) {
+          nextState = done;
+        } else {
+          nextState = edge_aligning;
+        }
+        makeTransition = TRUE;
+      }
+      break;
+
+    case edge_aligning:
       switch (ThisEvent.EventType) {
         case ES_ENTRY:
-          printf("entry to shooting\r\n");
-          robot_gun_shoot();
-          ES_Timer_InitTimer(FIRING_TIMER, FIRING_TIMEOUT);
+          printf("entry to Attack/edge_aligning\r\n");
+          if (dir == LEFT)
+            robot_ccw(500);
+          else
+            robot_cw(500);
           break;
 
-        case ES_TIMEOUT:
-          if (ThisEvent.EventParam == FIRING_TIMER) {
-            printf("timeout in shooting\r\n");
-            nextState = loading;
+        case TAPE_L:
+          if (dir == LEFT && ThisEvent.EventParam == ON_WHITE) {
+            nextState = finding_next_position;
+            InitEdgeFollower(LEFT);
             makeTransition = TRUE;
           }
           break;
 
-        case ES_EXIT:
-          printf("exit from shooting\r\n");
+        case TAPE_R:
+          if (dir == RIGHT && ThisEvent.EventParam == ON_WHITE) {
+            nextState = finding_next_position;
+            InitEdgeFollower(RIGHT);
+            makeTransition = TRUE;
+          }
           break;
       }
       break;
 
-    case loading:
+    case finding_next_position:
+      ThisEvent = RunEdgeFollower(ThisEvent);
       switch (ThisEvent.EventType) {
         case ES_ENTRY:
-          printf("entry to loading\r\n");
-          robot_gun_load();
-          ES_Timer_InitTimer(FIRING_TIMER, FIRING_TIMEOUT);
+          printf("entry to Attack/finding_next_position\r\n");
+          ES_Timer_InitTimer(NEXT_POSITION_TIMER, FIELD_WIDTH/num_positions);
           break;
 
         case ES_TIMEOUT:
-          if (ThisEvent.EventParam == FIRING_TIMER) {
-            printf("timeout in loading\r\n");
-            nextState = shooting;
+          if (ThisEvent.EventParam == NEXT_POSITION_TIMER) {
+            printf("timeout in Attack/finding_next_position\r\n");
+            nextState = beacon_aligning;
             makeTransition = TRUE;
           }
           break;
 
-        case ES_EXIT:
-          printf("exit from loading\r\n");
+        case EDGE_FOLLOW_DONE:
+          printf("Edge Follower finished, we shouldn't hit the edge...\r\n");
           break;
       }
       break;
 
+    case done:
+      if (ThisEvent.EventType == ES_ENTRY) {
+        robot_gun_stop();
+      }
+      break;
   }
 
   if (makeTransition) {
