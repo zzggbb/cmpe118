@@ -11,6 +11,9 @@
 #define MOTOR_PWM_MAX 0
 #define MOTOR_PWM_MIN 400
 
+#define BEACON_POP_MIN 1500
+#define BEACON_POP_MAX 2300
+
 int linear_scale(int x, int x1, int x2, int y1, int y2) {
   return (y2-y1) / (x2 - x1) * (x - x2) + y2;
 }
@@ -58,7 +61,7 @@ void robot_init(void) {
 // drive robot forward
 void robot_fwd(uint32_t speed) {
   speed = clip_speed(speed);
-  PWM_SetDutyCycle(L_MOTOR_PWM, speed);
+  PWM_SetDutyCycle(L_MOTOR_PWM, speed + 20);
   PWM_SetDutyCycle(R_MOTOR_PWM, speed);
   L_MOTOR_DIR_LAT = MOTOR_DIR_REV;
   R_MOTOR_DIR_LAT = MOTOR_DIR_REV;
@@ -67,7 +70,7 @@ void robot_fwd(uint32_t speed) {
 // drive robot backwards
 void robot_rev(uint32_t speed) {
   speed = clip_speed(speed);
-  PWM_SetDutyCycle(L_MOTOR_PWM, speed);
+  PWM_SetDutyCycle(L_MOTOR_PWM, speed + 20);
   PWM_SetDutyCycle(R_MOTOR_PWM, speed);
   L_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
   R_MOTOR_DIR_LAT = MOTOR_DIR_FWD;
@@ -101,21 +104,21 @@ void robot_stop(void) {
 
 void robot_curve_l(uint32_t speed) {
   PWM_SetDutyCycle(L_MOTOR_PWM, speed);
-  PWM_SetDutyCycle(R_MOTOR_PWM, speed + 100);
+  PWM_SetDutyCycle(R_MOTOR_PWM, speed + 175);
   L_MOTOR_DIR_LAT = MOTOR_DIR_REV;
   R_MOTOR_DIR_LAT = MOTOR_DIR_REV;
 }
 
 void robot_curve_r(uint32_t speed) {
-  PWM_SetDutyCycle(L_MOTOR_PWM, speed + 100);
+  PWM_SetDutyCycle(L_MOTOR_PWM, speed + 175);
   PWM_SetDutyCycle(R_MOTOR_PWM, speed);
   L_MOTOR_DIR_LAT = MOTOR_DIR_REV;
   R_MOTOR_DIR_LAT = MOTOR_DIR_REV;
 }
 
 void robot_gun_start(void) {
-  PWM_SetDutyCycle(GUN_MOTOR_L, 300);
-  PWM_SetDutyCycle(GUN_MOTOR_R, 300);
+  PWM_SetDutyCycle(GUN_MOTOR_L, 500);
+  PWM_SetDutyCycle(GUN_MOTOR_R, 500);
 }
 
 void robot_gun_stop(void) {
@@ -134,17 +137,17 @@ void robot_gun_shoot(void) {
 void robot_beacon_up(void) {
   int i;
   int j;
-  for (i=1000; i<=2000; i+=50) {
+  for (i=BEACON_POP_MIN; i<=BEACON_POP_MAX; i+=1) {
     RC_SetPulseTime(BEACON_POP_RC, i);
-    for (j=0; j<10e5; j++);
+    for (j=0; j<1e2; j++);
   }
 }
 
 void robot_beacon_down(void) {
   int i;
   int j;
-  for (i=2000; i>=1000; i-=50) {
+  for (i=BEACON_POP_MAX; i>=BEACON_POP_MIN; i-=1) {
     RC_SetPulseTime(BEACON_POP_RC, i);
-    for (j=0; j<10e5; j++);
+    for (j=0; j<1e2; j++);
   }
 }

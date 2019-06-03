@@ -17,7 +17,7 @@
 #include "robot.h"
 #include "pins.h"
 
-#define FIRST_BACKUP_TIMEOUT 1000
+#define FIRST_BACKUP_TIMEOUT 550
 
 typedef enum {
   init,
@@ -72,8 +72,11 @@ ES_Event RunHSM(ES_Event ThisEvent) {
   switch (CurrentState) {
     case init:
       if (ThisEvent.EventType == ES_INIT) {
+        nextState = first_align;
         //nextState = first_edge_find;
-        nextState = follow_first_edge_left;
+        //nextState = follow_first_edge_left;
+        //nextState = attacking;
+        //InitAttack(RIGHT);
         makeTransition = TRUE;
       }
       break;
@@ -209,9 +212,9 @@ ES_Event RunHSM(ES_Event ThisEvent) {
           break;
 
         case ROTATE_90_DONE:
-          //nextState = finding_ifz;
-          //InitFindIFZ(LEFT);
-          //makeTransition = TRUE;
+          nextState = finding_ifz;
+          InitFindIFZ(LEFT);
+          makeTransition = TRUE;
           break;
       }
       break;
@@ -224,9 +227,9 @@ ES_Event RunHSM(ES_Event ThisEvent) {
           break;
 
         case ROTATE_90_DONE:
-          //nextState = finding_ifz;
-          //InitFindIFZ(RIGHT);
-          //makeTransition = TRUE;
+          nextState = finding_ifz;
+          InitFindIFZ(RIGHT);
+          makeTransition = TRUE;
           break;
       }
       break;

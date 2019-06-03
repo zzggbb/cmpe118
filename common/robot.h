@@ -41,7 +41,7 @@
 #define GUN_MOTOR_R PWM_PORTX11 // silk pin 10
 
 #define BEACON_POP_RC RC_PORTY06 // silk pin 8
-#define GUN_LOADER_RC RC_PORTY07 // silk pin 33
+#define GUN_LOADER_RC RC_PORTZ09 // silk pin 33
 
 #define FAKE_BEACON_PIN 34
 
@@ -53,7 +53,7 @@
 
 #define BEACON_ANALOG_PIN AD_PORTV7
 
-#define TAPE_L_PIN 32
+#define TAPE_L_PIN 7
 #define TAPE_R_PIN 31
 
 #define BUMP_L_PIN 28

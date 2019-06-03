@@ -10,7 +10,7 @@
 #include "robot.h"
 #include "pins.h"
 
-#define FIRING_TIMEOUT 1000 // milliseconds
+#define FIRING_TIMEOUT 1500 // milliseconds
 
 typedef enum {
   uninitialized,

@@ -13,12 +13,12 @@
 #include "robot.h"
 #include "pins.h"
 
-#define WARMUP_TIMEOUT 10000 // time for warming up launch motors [milliseconds]
-#define FIELD_WIDTH 2750 // time needed to cross the field [milliseconds]
+#define WARMUP_TIMEOUT 15000 // time for warming up launch motors [milliseconds]
+#define FIELD_WIDTH 2000 // time needed to cross the field [milliseconds]
 
 static uint8_t current_position = 0;
 static uint8_t num_positions = 5;
-static uint8_t shots_per_position[] = {0,1,11,1,0};
+static uint8_t shots_per_position[] = {0,3,6,3,0};
 
 typedef enum {
   uninitialized,
@@ -139,7 +139,7 @@ ES_Event RunAttack(ES_Event ThisEvent) {
       switch (ThisEvent.EventType) {
         case ES_ENTRY:
           printf("entry to Attack/finding_next_position\r\n");
-          ES_Timer_InitTimer(NEXT_POSITION_TIMER, FIELD_WIDTH/num_positions);
+          ES_Timer_InitTimer(NEXT_POSITION_TIMER, 1000);
           break;
 
         case ES_TIMEOUT:

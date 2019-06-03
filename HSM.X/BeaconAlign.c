@@ -17,7 +17,7 @@
  * stop detecting it. units are in milliseconds */
 #define TIME_THRESHOLD 75
 
-#define ALIGN_NUDGE_TIMEOUT 20 // milliseconds
+#define ALIGN_NUDGE_TIMEOUT 50 // milliseconds
 
 #define ALIGN_STOP_TIMEOUT 500 // milliseconds
 

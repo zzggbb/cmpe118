@@ -13,8 +13,9 @@
 
 //#define TEST_HARNESS
 //#define MOTOR_TEST
-#define SENSOR_TEST
+//#define SENSOR_TEST
 //#define GUN_TEST
+//#define FWD_TEST
 
 void delay(uint32_t cycles){
   int i;
@@ -36,6 +37,12 @@ void main(void) {
   printf("project: HSM\r\n");
   printf("compiled: " __DATE__ " " __TIME__ "\r\n");
 
+#ifdef FWD_TEST
+  for(;;) {
+    robot_fwd(500);
+  }
+#endif
+
 #ifdef SENSOR_TEST
   for (;;) {
     printf("bump(%d %d) tape(%d %d) beacon(%d %d)\r\n",
@@ -50,7 +57,6 @@ void main(void) {
 #ifdef GUN_TEST
   printf("starting gun motors\r\n");
   robot_gun_start();
-  for(;;);
 
   for(;;) {
     printf("loading gun\r\n");
@@ -59,14 +65,6 @@ void main(void) {
 
     printf("shooting gun\r\n");
     robot_gun_shoot();
-    delay(1e6);
-
-    printf("beacon up\r\n");
-    //robot_beacon_up();
-    delay(1e6);
-
-    printf("beacon down\r\n");
-    //robot_beacon_down();
     delay(1e6);
   }
 #endif

@@ -16,8 +16,8 @@
 #include "robot.h"
 #include "pins.h"
 
-#define IFZ_BACKUP_TIMEOUT 250
-#define CROSS_TIMEOUT 3000
+#define IFZ_BACKUP_TIMEOUT 300
+#define CROSS_TIMEOUT 3100
 
 typedef enum {
   uninitialized,
